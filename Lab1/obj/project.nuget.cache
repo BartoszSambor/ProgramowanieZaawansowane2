@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "v1Ouag0gEvicfRFkYTqyuQNN2jrigUB+Wzn1q6gD2DRQXe4kAesbuzvuyfSmO8ovu5i73K1zRXOSkvoB7nHjnQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Bartek\\source\\repos\\Lab1\\Lab1\\Lab1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Bartek\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.17\\microsoft.netcore.app.host.win-x64.3.1.17.nupkg.sha512"
+  ],
+  "logs": []
+}

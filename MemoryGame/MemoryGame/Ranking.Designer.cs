@@ -37,11 +37,11 @@ namespace MemoryGame
             // 
             // listBox1
             // 
-            this.listBox1.Enabled = false;
+            this.listBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 107);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(140, 212);
+            this.listBox1.Size = new System.Drawing.Size(150, 303);
             this.listBox1.TabIndex = 2;
             // 
             // label1
@@ -75,11 +75,14 @@ namespace MemoryGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(234, 427);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Ranking";
             this.Text = "Ranking";
             this.ResumeLayout(false);

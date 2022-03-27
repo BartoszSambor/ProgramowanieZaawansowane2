@@ -25,6 +25,7 @@ namespace MemoryGame
             AddRecordToFile(nick, score);
             LoadRanking();
             label3.Text = "Twój wynik: " + score.ToString();
+            label1.Text = "Wygrana";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,6 +59,11 @@ namespace MemoryGame
 
             records.Sort((x, y) => y.Item2.CompareTo(x.Item2));
 
+            if(records.Count > 50)
+            {
+                records.RemoveAt(records.Count - 1);
+            }
+
             File.WriteAllText(@"c:\\Users\\Bartek\\Desktop\\tmp22\\ranking.csv", string.Empty);
 
             using (StreamWriter sw = File.AppendText(@"c:\\Users\\Bartek\\Desktop\\tmp22\\ranking.csv"))
@@ -82,10 +88,7 @@ namespace MemoryGame
                 sb2.Append(row[0]);
                 sb2.Append(" ");
                 sb2.Append(row[1]);
-
-
                 listBox1.Items.Add(sb2.ToString());
-
             }
         }
     }

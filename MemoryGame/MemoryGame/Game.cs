@@ -18,13 +18,16 @@ namespace MemoryGame
         PictureBox firstClicked = null;
         PictureBox secondClicked = null;
         private Image hideImage;
+        private Image reversImage;
+        public delegate void something();
         List<(PictureBox, Image)> images = new List<(PictureBox, Image)>();
         public Game(Settings settings)
         {
             this.settings = settings;
             InitializeComponent();
             AddItems(settings.cardCount);
-            hideImage = Image.FromFile(@"c:\\Users\\Bartek\\Desktop\\tmp22\\zzz.png");
+            hideImage = Image.FromFile(@"c:\\Users\\Bartek\\Desktop\\tmp22\\zzzEmpty.png");
+            reversImage = Image.FromFile(@"c:\\Users\\Bartek\\Desktop\\tmp22\\zzz2.png");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -73,11 +76,10 @@ namespace MemoryGame
                 //add a new RowStyle as a copy of the previous one
                 tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(temp.SizeType, temp.Width));
             }
-
-
+            ///////////////////////////////////////////////////////////////////////////////////////
             string[] files = System.IO.Directory.GetFiles(@"c:\\Users\\Bartek\\Desktop\\tmp22", "*.png");
-            string[] names = new string[count];
 
+            string[] names = new string[count];
             for (int i = 0; i < count / 2; i++)
             {
                 names[i * 2] = files[i];
@@ -102,44 +104,20 @@ namespace MemoryGame
 
             for (int i = 0; i < count; i++)
             {
-                /*tableLayoutPanel1.Controls.Add(new Label() {
-                    Text = GetRandomLetter(), 
-                    Font = new Font("Webdings", 10), 
-                    AutoSize = false, 
-                    Size = new Size(100,100), 
-                    Dock = DockStyle.Fill 
-                });
-
-                 //get a reference to the previous existent 
-                RowStyle temp = tableLayoutPanel1.RowStyles[tableLayoutPanel1.RowCount - 1];
-                //increase panel rows count by one
-                tableLayoutPanel1.RowCount++;
-                //add a new RowStyle as a copy of the previous one
-                tableLayoutPanel1.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
-                //add your three controls
-                tableLayoutPanel1.Controls.Add(new Label() { Text = address }, 0, tableLayoutPanel1.RowCount - 1);
-                tableLayoutPanel1.Controls.Add(new Label() { Text = contactNum }, 1, tableLayoutPanel1.RowCount - 1);
-                tableLayoutPanel1.Controls.Add(new Label() { Text = email }, 2, tableLayoutPanel1.RowCount - 1);
-
-*/
-
-
-                //Image image1 = Image.FromFile("c:\\Users\\Bartek\\Desktop\\tmp22\\ammonite.png");
                 Image image1 = Image.FromFile(names[i]);
-                image1.Tag = names[i];
+                //image1.Tag = names[i];
                 PictureBox p = new PictureBox()
                 {
                     Dock = DockStyle.Fill,
-                    BackColor = Color.White,
+                    BackColor = SystemColors.ActiveCaption,
                     Image = image1,
                     SizeMode = PictureBoxSizeMode.StretchImage
                 };
+                p.Tag = names[i];
                 p.Click += new EventHandler(pictureBoxClicked);
                 tableLayoutPanel.Controls.Add(p);
-
+                images.Add((p, image1));
             }
-            //tableLayoutPanel1.Controls.Add(new Label() { Text = text }, 0, tableLayoutPanel1.RowCount - 1);
-
         }
 
         private void pictureBoxClicked(object sender, EventArgs e)
@@ -159,7 +137,7 @@ namespace MemoryGame
                 // If the clicked label is black, the player clicked
                 // an icon that's already been revealed --
                 // ignore the click
-                if (clickedLabel.BackColor == Color.Black)
+                if (clickedLabel.Image != reversImage)
                     return;
 
                 // If firstClicked is null, this is the first icon 
@@ -169,8 +147,7 @@ namespace MemoryGame
                 if (firstClicked == null)
                 {
                     firstClicked = clickedLabel;
-                    firstClicked.BackColor = Color.Black;
-
+                    firstClicked.Image = images.Find((x) => x.Item1 == firstClicked).Item2;
                     return;
                 }
 
@@ -179,22 +156,31 @@ namespace MemoryGame
                 // so this must be the second icon the player clicked
                 // Set its color to black
                 secondClicked = clickedLabel;
-                secondClicked.BackColor = Color.Black;
+                secondClicked.Image = images.Find((x) => x.Item1 == secondClicked).Item2;
 
-                // Check to see if the player won
-                CheckForWinner();
+
+
 
                 // If the player clicked two matching icons, keep them 
                 // black and reset firstClicked and secondClicked 
                 // so the player can click another icon
-                if (firstClicked.Image.Tag == secondClicked.Image.Tag)
+                if (firstClicked.Tag == secondClicked.Tag)
                 {
-                   /* firstClicked.Image = hideImage;
-                    secondClicked.Image = hideImage;*/
+                    //firstClicked.Image = hideImage;
+                    //secondClicked.Image = hideImage;
+                    CheckForWinner();
+                    var t = new Timer();
+                    t.Interval = (int)(settings.hideTime*1000);
+                    PictureBox f = firstClicked;
+                    PictureBox s = secondClicked;
+                    t.Tick += delegate { f.Image = hideImage; s.Image = hideImage; t.Stop(); };
+                    t.Start();
                     firstClicked = null;
                     secondClicked = null;
                     return;
                 }
+
+
 
                 // If the player gets this far, the player 
                 // clicked two different icons, so start the 
@@ -212,13 +198,14 @@ namespace MemoryGame
 
                 if (iconLabel != null)
                 {
-                    if (iconLabel.BackColor == Color.White)
+                    if (iconLabel.Image == reversImage)
                         return;
                 }
             }
             // If the loop didn’t return, it didn't find
             // any unmatched icons
             // That means the user won. Show a message and close the form
+            RevealAllCards();
             watch.Stop();
             int time = watch.Elapsed.Seconds;
             int score = 1000 - time * 10 + settings.cardCount * 5;
@@ -235,8 +222,8 @@ namespace MemoryGame
             timer1.Stop();
 
             // Hide both icons
-            firstClicked.BackColor = Color.White;
-            secondClicked.BackColor = Color.White;
+            firstClicked.Image = reversImage;
+            secondClicked.Image = reversImage;
 
             // Reset firstClicked and secondClicked 
             // so the next time a label is
@@ -269,7 +256,9 @@ namespace MemoryGame
 
                 if (iconLabel != null)
                 {
-                    iconLabel.BackColor = Color.White;
+                    iconLabel.Image =  reversImage;
+
+                    //iconLabel.BackColor = Color.White;
                 }
             }
 
@@ -283,7 +272,9 @@ namespace MemoryGame
 
                 if (iconLabel != null)
                 {
-                    iconLabel.BackColor = Color.Black;
+                    //iconLabel.BackColor = Color.Black;
+                    iconLabel.Image = images.Find((x) => x.Item1 == iconLabel).Item2;
+
                 }
             }
         }

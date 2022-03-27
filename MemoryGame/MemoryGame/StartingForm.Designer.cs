@@ -46,6 +46,8 @@ namespace MemoryGame
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 300);
             this.Controls.Add(this.content);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "StartingForm";
             this.Text = "Memory";
             this.Load += new System.EventHandler(this.StartingForm_Load);

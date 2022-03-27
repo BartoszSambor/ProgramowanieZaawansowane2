@@ -74,22 +74,24 @@ namespace MemoryGame
             // 
             // buttonCancel
             // 
+            this.buttonCancel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.buttonCancel.Location = new System.Drawing.Point(153, 157);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 6;
             this.buttonCancel.Text = "Anuluj";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonSave
             // 
+            this.buttonSave.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.buttonSave.Location = new System.Drawing.Point(15, 157);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 7;
             this.buttonSave.Text = "Zapisz";
-            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // trackBar1
@@ -156,6 +158,7 @@ namespace MemoryGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(576, 205);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -168,6 +171,8 @@ namespace MemoryGame
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "SettingsForm";
             this.Text = "Ustawienia";
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();

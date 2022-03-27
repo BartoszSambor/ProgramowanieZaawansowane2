@@ -5,3 +5,7 @@ C:\Users\student\source\repos\HelloWorld\HelloWorld\obj\Debug\HelloWorld.csprojA
 C:\Users\student\source\repos\HelloWorld\HelloWorld\obj\Debug\HelloWorld.csproj.CoreCompileInputs.cache
 C:\Users\student\source\repos\HelloWorld\HelloWorld\obj\Debug\HelloWorld.exe
 C:\Users\student\source\repos\HelloWorld\HelloWorld\obj\Debug\HelloWorld.pdb
+C:\Users\Bartek\Source\Repos\ProgramowanieZaawansowane2\HelloWorld\obj\Debug\HelloWorld.csproj.AssemblyReference.cache
+C:\Users\Bartek\Source\Repos\ProgramowanieZaawansowane2\HelloWorld\obj\Debug\HelloWorld.csproj.CoreCompileInputs.cache
+C:\Users\Bartek\Source\Repos\ProgramowanieZaawansowane2\HelloWorld\obj\Debug\HelloWorld.exe
+C:\Users\Bartek\Source\Repos\ProgramowanieZaawansowane2\HelloWorld\obj\Debug\HelloWorld.pdb

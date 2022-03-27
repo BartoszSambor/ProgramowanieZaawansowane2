@@ -59,6 +59,21 @@ namespace MemoryGame
                     icons.RemoveAt(randomNumber);
                 }
             }
+            //this.AddItem("adress", "contact nuim", "email");
+        }
+
+        private void AddItem(string address, string contactNum, string email)
+        {
+            //get a reference to the previous existent 
+            RowStyle temp = tableLayoutPanel1.RowStyles[tableLayoutPanel1.RowCount - 1];
+            //increase panel rows count by one
+            tableLayoutPanel1.RowCount++;
+            //add a new RowStyle as a copy of the previous one
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
+            //add your three controls
+            tableLayoutPanel1.Controls.Add(new Label() { Text = address }, 0, tableLayoutPanel1.RowCount - 1);
+            tableLayoutPanel1.Controls.Add(new Label() { Text = contactNum }, 1, tableLayoutPanel1.RowCount - 1);
+            tableLayoutPanel1.Controls.Add(new Label() { Text = email }, 2, tableLayoutPanel1.RowCount - 1);
         }
 
         /// <summary>
@@ -173,6 +188,11 @@ namespace MemoryGame
             // That means the user won. Show a message and close the form
             MessageBox.Show("You matched all the icons!", "Congratulations");
             Close();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

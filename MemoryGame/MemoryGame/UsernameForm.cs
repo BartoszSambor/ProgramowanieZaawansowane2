@@ -22,17 +22,18 @@ namespace MemoryGame
 
         private void button1_Click(object sender, EventArgs e)
         {
-            parent.UsernameSelected(textBox1.Text);
+            if(validateUsername())
+                parent.UsernameSelected(textBox1.Text);
+            else
+            {
+                MessageBox.Show("Nie podano nicku", "Błąd");
+            }
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        
+        // returns true if user nick is correct
+        private bool validateUsername()
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            return textBox1.Text.Length > 0;
         }
     }
 }

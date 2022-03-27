@@ -23,6 +23,7 @@ namespace MemoryGame
             InitializeComponent();
         }
 
+        // communication with SettingsForm
         public void SetSettings(Settings settings)
         {
             this.settings = settings;
@@ -38,17 +39,16 @@ namespace MemoryGame
 
         private void buttonStartGame_Click(object sender, EventArgs e)
         {
-            Debug.WriteLine("card count: " + settings.cardCount.ToString());
-            var settingsForm = new Game(settings);
-            settingsForm.Location = this.Location;
-            settingsForm.StartPosition = FormStartPosition.Manual;
-            settingsForm.FormClosing += delegate { parent.Show(); this.Show();};
-            settingsForm.Show();
+            var gameForm = new Game(settings);
+            gameForm.Location = this.Location;
+            gameForm.StartPosition = FormStartPosition.Manual;
+            gameForm.FormClosing += delegate { parent.Show(); this.Show();};
+            gameForm.Show();
             parent.Hide();
             this.Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonExit_Click(object sender, EventArgs e)
         {
             parent.Close();
         }

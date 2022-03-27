@@ -14,7 +14,6 @@ namespace MemoryGame
     {
         UsernameForm usernameChild;
         MenuForm menuChild;
-        string username;
         public StartingForm()
         {
             InitializeComponent();
@@ -22,23 +21,20 @@ namespace MemoryGame
 
         private void StartingForm_Load(object sender, EventArgs e)
         {
-            var child = new UsernameForm(this);
-            usernameChild = child;
-            child.TopLevel = false;
-            child.FormBorderStyle = FormBorderStyle.None;
-            child.Dock = DockStyle.Fill;
-            content.Controls.Add(child);
-            content.Tag = child;
-            child.BringToFront();
-            child.Show();
+            usernameChild = new UsernameForm(this);
+            LoadChild(usernameChild);
         }
 
         public void UsernameSelected(string username)
         {
-            this.username = username;
-            var child = new MenuForm(this, username);
-            menuChild = child;
+            menuChild = new MenuForm(this, username);
             usernameChild.Hide();
+            LoadChild(menuChild);
+        }
+
+        // fill panel with borderless form provided
+        private void LoadChild(Form child)
+        {
             child.TopLevel = false;
             child.FormBorderStyle = FormBorderStyle.None;
             child.Dock = DockStyle.Fill;

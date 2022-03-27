@@ -54,7 +54,6 @@ namespace MemoryGame
             this.label1.TabIndex = 1;
             this.label1.Text = "Podaj swoje imię:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -62,7 +61,6 @@ namespace MemoryGame
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 20);
             this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // UsernameForm
             // 

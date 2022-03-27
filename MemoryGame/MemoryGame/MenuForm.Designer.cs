@@ -31,7 +31,7 @@ namespace MemoryGame
         {
             this.buttonStartGame = new System.Windows.Forms.Button();
             this.buttonConfigure = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonStartGame
@@ -56,16 +56,16 @@ namespace MemoryGame
             this.buttonConfigure.UseVisualStyleBackColor = false;
             this.buttonConfigure.Click += new System.EventHandler(this.buttonConfigure_Click);
             // 
-            // button3
+            // buttonExit
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Location = new System.Drawing.Point(100, 164);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Wyjdź";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonExit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.buttonExit.Location = new System.Drawing.Point(100, 164);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonExit.TabIndex = 2;
+            this.buttonExit.Text = "Wyjdź";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // MenuForm
             // 
@@ -73,7 +73,7 @@ namespace MemoryGame
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonConfigure);
             this.Controls.Add(this.buttonStartGame);
             this.Name = "MenuForm";
@@ -86,6 +86,6 @@ namespace MemoryGame
 
         private System.Windows.Forms.Button buttonStartGame;
         private System.Windows.Forms.Button buttonConfigure;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonExit;
     }
 }

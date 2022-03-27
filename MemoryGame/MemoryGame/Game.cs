@@ -13,72 +13,86 @@ namespace MemoryGame
 {
     public partial class Game : Form
     {
+        // counting time of the game
         private Stopwatch watch;
+        // store game settings
         private Settings settings;
+        // helper variables
         PictureBox firstClicked = null;
         PictureBox secondClicked = null;
+        // images
         private Image hideImage;
         private Image reversImage;
-        public delegate void something();
+        // storing original images of cards (before reversing)
         List<(PictureBox, Image)> images = new List<(PictureBox, Image)>();
+
         public Game(Settings settings)
         {
             this.settings = settings;
             InitializeComponent();
             AddItems(settings.cardCount);
-            hideImage = Image.FromFile(@"c:\\Users\\Bartek\\Desktop\\tmp22\\zzzEmpty.png");
-            reversImage = Image.FromFile(@"c:\\Users\\Bartek\\Desktop\\tmp22\\zzz2.png");
+            hideImage = Image.FromFile(@"Pictures\\zzzEmpty.png");
+            reversImage = Image.FromFile(@"Pictures\\zzz2.png");
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddItems(int count)
+        private Size CalculateTableSize(int cardCount)
         {
             int rowCount = 0, colCount = 0;
 
-            double sqrt = Math.Sqrt(count);
+            double sqrt = Math.Sqrt(cardCount);
             int i_sqrt = (int)sqrt;
 
-            if (i_sqrt * i_sqrt == count)
+            // try to get square as small as possible
+            if (i_sqrt * i_sqrt == cardCount)
             {
                 rowCount = colCount = i_sqrt;
-            }
-            else if (i_sqrt * (i_sqrt + 1) >= count)
+            } 
+            // add row if square is too small
+            else if (i_sqrt * (i_sqrt + 1) >= cardCount)
             {
                 rowCount = i_sqrt + 1;
                 colCount = i_sqrt;
             }
-            else
+            // make bigger square if adding row was not enough
+            else 
             {
                 rowCount = i_sqrt + 1;
                 colCount = i_sqrt + 1;
             }
+            return new Size(rowCount, colCount);
+        }
 
+        private void AddItems(int count)
+        {
+            Size s = CalculateTableSize(count);
+            int rowCount = s.Width, colCount = s.Height;
 
-
+            // add rows (4 rows are from begining)
             for (int i = 4; i < rowCount; i++)
             {
                 RowStyle temp = tableLayoutPanel.RowStyles[tableLayoutPanel.RowCount - 1];
-                //increase panel rows count by one
                 tableLayoutPanel.RowCount++;
                 //add a new RowStyle as a copy of the previous one
                 tableLayoutPanel.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
             }
-
+            // add columns (4 rows are from begining)
             for (int i = 4; i < colCount; i++)
             {
                 ColumnStyle temp = tableLayoutPanel.ColumnStyles[tableLayoutPanel.ColumnCount - 1];
-                //increase panel rows count by one
                 tableLayoutPanel.ColumnCount++;
-                //add a new RowStyle as a copy of the previous one
+                //add a new ColumnStyle as a copy of the previous one
                 tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(temp.SizeType, temp.Width));
             }
-            ///////////////////////////////////////////////////////////////////////////////////////
-            string[] files = System.IO.Directory.GetFiles(@"c:\\Users\\Bartek\\Desktop\\tmp22", "*.png");
+            LoadAndCreateCards(count);
 
+        }
+
+        private void LoadAndCreateCards(int count)
+        {
+            // names of all png files in Cards directory
+            string[] files = System.IO.Directory.GetFiles(@"Cards", "*.png");
+
+            // names of png files but every name have its duplicate
             string[] names = new string[count];
             for (int i = 0; i < count / 2; i++)
             {
@@ -86,12 +100,7 @@ namespace MemoryGame
                 names[i * 2 + 1] = files[i];
             }
 
-            Debug.WriteLine("start");
-            foreach (var a in names)
-            {
-                Debug.WriteLine(a);
-            }
-
+            // shuffle array using "Fisher-Yates shuffle"
             Random rng = new Random();
             int n = names.Length;
             while (n > 1)
@@ -102,10 +111,10 @@ namespace MemoryGame
                 names[k] = temp;
             }
 
+            // create cards
             for (int i = 0; i < count; i++)
             {
                 Image image1 = Image.FromFile(names[i]);
-                //image1.Tag = names[i];
                 PictureBox p = new PictureBox()
                 {
                     Dock = DockStyle.Fill,
@@ -113,11 +122,15 @@ namespace MemoryGame
                     Image = image1,
                     SizeMode = PictureBoxSizeMode.StretchImage
                 };
-                p.Tag = names[i];
                 p.Click += new EventHandler(pictureBoxClicked);
+                // set tag to compare later if two cards had same image
+                p.Tag = names[i];
                 tableLayoutPanel.Controls.Add(p);
+
+                // all cards will be reversed (by changing image), so this list store original images
                 images.Add((p, image1));
             }
+
         }
 
         private void pictureBoxClicked(object sender, EventArgs e)
@@ -134,7 +147,7 @@ namespace MemoryGame
             if (clickedLabel != null)
             {
 
-                // If the clicked label is black, the player clicked
+                // If the clicked picture is reversed, the player clicked
                 // an icon that's already been revealed --
                 // ignore the click
                 if (clickedLabel.Image != reversImage)
@@ -142,8 +155,8 @@ namespace MemoryGame
 
                 // If firstClicked is null, this is the first icon 
                 // in the pair that the player clicked,
-                // so set firstClicked to the label that the player 
-                // clicked, change its color to black, and return
+                // so set firstClicked to the picture that the player 
+                // clicked, change its image, and return
                 if (firstClicked == null)
                 {
                     firstClicked = clickedLabel;
@@ -154,20 +167,15 @@ namespace MemoryGame
                 // If the player gets this far, the timer isn't
                 // running and firstClicked isn't null,
                 // so this must be the second icon the player clicked
-                // Set its color to black
+                // Set its image
                 secondClicked = clickedLabel;
                 secondClicked.Image = images.Find((x) => x.Item1 == secondClicked).Item2;
 
-
-
-
                 // If the player clicked two matching icons, keep them 
-                // black and reset firstClicked and secondClicked 
+                // visuble for short moment and reset firstClicked and secondClicked 
                 // so the player can click another icon
                 if (firstClicked.Tag == secondClicked.Tag)
                 {
-                    //firstClicked.Image = hideImage;
-                    //secondClicked.Image = hideImage;
                     CheckForWinner();
                     var t = new Timer();
                     t.Interval = (int)(settings.hideTime*1000);
@@ -180,12 +188,8 @@ namespace MemoryGame
                     return;
                 }
 
-
-
                 // If the player gets this far, the player 
-                // clicked two different icons, so start the 
-                // timer (which will wait three quarters of 
-                // a second, and then hide the icons)
+                // clicked two different icons, so start the timer
                 timer1.Start();
             }
         }
@@ -218,16 +222,11 @@ namespace MemoryGame
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            // Stop the timer
             timer1.Stop();
 
-            // Hide both icons
             firstClicked.Image = reversImage;
             secondClicked.Image = reversImage;
 
-            // Reset firstClicked and secondClicked 
-            // so the next time a label is
-            // clicked, the program knows it's the first click
             firstClicked = null;
             secondClicked = null;
         }
@@ -240,6 +239,7 @@ namespace MemoryGame
             watch = new Stopwatch();
             watch.Start();
             timer1.Interval = (int)(settings.hideTime * 1000);
+            label2.Text = (trackBar1.Value * 100).ToString() + " ms";
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -257,8 +257,6 @@ namespace MemoryGame
                 if (iconLabel != null)
                 {
                     iconLabel.Image =  reversImage;
-
-                    //iconLabel.BackColor = Color.White;
                 }
             }
 
@@ -272,9 +270,7 @@ namespace MemoryGame
 
                 if (iconLabel != null)
                 {
-                    //iconLabel.BackColor = Color.Black;
                     iconLabel.Image = images.Find((x) => x.Item1 == iconLabel).Item2;
-
                 }
             }
         }

@@ -21,3 +21,4 @@ C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGameTest\MemoryGam
 C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGameTest\MemoryGameTest\obj\Debug\net5.0-windows\MemoryGameTest.UserControl2.resources
 C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGameTest\MemoryGameTest\obj\Debug\net5.0-windows\MemoryGameTest.Form3.resources
 C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGameTest\MemoryGameTest\obj\Debug\net5.0-windows\MemoryGameTest.Properties.Resources.resources
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGameTest\MemoryGameTest\obj\Debug\net5.0-windows\MemoryGameTest.Form4.resources

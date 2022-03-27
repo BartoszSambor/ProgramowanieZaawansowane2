@@ -140,8 +140,7 @@ namespace MemoryGameTest
                 return;
 
             PictureBox clickedLabel = sender as PictureBox;
-/*            firstClicked = clickedLabel;
-            firstClicked.ForeColor = Color.Black;*/
+
 
             if (clickedLabel != null)
             {
@@ -173,7 +172,7 @@ namespace MemoryGameTest
                 secondClicked.BackColor = Color.Black;
 
                 // Check to see if the player won
-                //CheckForWinner();
+                CheckForWinner();
 
                 // If the player clicked two matching icons, keep them 
                 // black and reset firstClicked and secondClicked 
@@ -221,6 +220,26 @@ namespace MemoryGameTest
             firstClicked = null;
             secondClicked = null;
 
+        }
+
+        private void CheckForWinner()
+        {
+            foreach (Control control in tableLayoutPanel1.Controls)
+            {
+                PictureBox iconLabel = control as PictureBox;
+
+                if (iconLabel != null)
+                {
+                    if (iconLabel.BackColor == Color.White)
+                        return;
+                }
+            }
+            // If the loop didn’t return, it didn't find
+            // any unmatched icons
+            // That means the user won. Show a message and close the form
+/*            var f = new Form4();
+            f.ShowDialog();*/
+            Close();
         }
     }
 }

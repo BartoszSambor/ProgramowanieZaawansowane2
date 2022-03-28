@@ -36,7 +36,7 @@ namespace MemoryGame
         void AddRecordToFile(string name, int score)
         {
             List<(string, int)> records = new List<(string, int)>();
-            var parser = new Microsoft.VisualBasic.FileIO.TextFieldParser(@"c:\\Users\\Bartek\\Desktop\\tmp22\\ranking.csv");
+            var parser = new Microsoft.VisualBasic.FileIO.TextFieldParser(@"Settings\\ranking.csv");
             parser.TextFieldType = Microsoft.VisualBasic.FileIO.FieldType.Delimited;
             parser.SetDelimiters(new string[] { "," });
             while (!parser.EndOfData)
@@ -64,9 +64,9 @@ namespace MemoryGame
                 records.RemoveAt(records.Count - 1);
             }
 
-            File.WriteAllText(@"c:\\Users\\Bartek\\Desktop\\tmp22\\ranking.csv", string.Empty);
+            File.WriteAllText(@"Settings\\ranking.csv", string.Empty);
 
-            using (StreamWriter sw = File.AppendText(@"c:\\Users\\Bartek\\Desktop\\tmp22\\ranking.csv"))
+            using (StreamWriter sw = File.AppendText(@"Settings\\ranking.csv"))
             {
                 foreach((string, int) r in records)
                 {
@@ -77,9 +77,9 @@ namespace MemoryGame
 
         void LoadRanking()
         {
-            var parser = new Microsoft.VisualBasic.FileIO.TextFieldParser(@"c:\\Users\\Bartek\\Desktop\\tmp22\\ranking.csv");
+            var parser = new Microsoft.VisualBasic.FileIO.TextFieldParser(@"Settings\\ranking.csv");
             parser.TextFieldType = Microsoft.VisualBasic.FileIO.FieldType.Delimited;
-            parser.SetDelimiters(new string[] { "," });
+            parser.SetDelimiters(new string[] { ", " });
             StringBuilder sb = new StringBuilder();
             while (!parser.EndOfData)
             {

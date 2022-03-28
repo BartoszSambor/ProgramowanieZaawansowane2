@@ -1,7 +1,6 @@
 C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGame\MemoryGame\bin\Debug\MemoryGame.exe.config
 C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGame\MemoryGame\bin\Debug\MemoryGame.exe
 C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGame\MemoryGame\bin\Debug\MemoryGame.pdb
-C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGame\MemoryGame\obj\Debug\MemoryGame.csproj.AssemblyReference.cache
 C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGame\MemoryGame\obj\Debug\MemoryGame.StartingFormjhk.resources
 C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGame\MemoryGame\obj\Debug\MemoryGame.Properties.Resources.resources
 C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGame\MemoryGame\obj\Debug\MemoryGame.StartingForm.resources
@@ -14,3 +13,4 @@ C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGame\MemoryGame\ob
 C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGame\MemoryGame\obj\Debug\MemoryGame.SettingsForm.resources
 C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGame\MemoryGame\obj\Debug\MemoryGame.Game.resources
 C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGame\MemoryGame\obj\Debug\MemoryGame.Ranking.resources
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\MemoryGame\MemoryGame\obj\Debug\MemoryGame.csprojAssemblyReference.cache

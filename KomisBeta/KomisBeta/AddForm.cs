@@ -86,6 +86,7 @@ namespace KomisBeta
                 sw.WriteLine(car.ToCSV());
             }*/
             File.AppendAllText("data/data.csv", car.ToCSV() + Environment.NewLine);
+            
             this.Clear();
         }
 

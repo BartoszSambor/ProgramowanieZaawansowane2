@@ -23,7 +23,9 @@ namespace KomisBeta
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            if(!(searchForm is null))
+            this.Size = new Size(800, 460);
+
+            if (!(searchForm is null))
             {
                 searchForm.Hide();
             }
@@ -34,6 +36,7 @@ namespace KomisBeta
             if (addForm is null)
             {
                 addForm = new AddForm();
+                LoadChild(addForm);
                 addForm.FormClosed += delegate { this.addForm = null; };
             }
             addForm.Show();
@@ -41,6 +44,7 @@ namespace KomisBeta
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
+            this.Size = new Size(1120, 800);
             if(!(addForm is null))
             {
                 addForm.Hide();
@@ -52,6 +56,7 @@ namespace KomisBeta
             if (searchForm is null)
             {
                 searchForm = new SearchForm(this);
+                LoadChild(searchForm);
                 searchForm.FormClosed += delegate { this.searchForm = null; };
 
             }
@@ -60,6 +65,8 @@ namespace KomisBeta
 
         private void CalendarButton_Click(object sender, EventArgs e)
         {
+            this.Size = new Size(600, 480);
+
             if (!(addForm is null))
             {
                 addForm.Hide();
@@ -71,6 +78,7 @@ namespace KomisBeta
             if (reservationList is null)
             {
                 reservationList = new ReservationList();
+                LoadChild(reservationList);
                 reservationList.FormClosed += delegate { this.reservationList = null; };
 
             }
@@ -84,6 +92,21 @@ namespace KomisBeta
             CalendarButton_Click(this, new EventArgs());
         }
 
+        private void Menu_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        // fill panel with borderless form provided
+        private void LoadChild(Form child)
+        {
+            child.TopLevel = false;
+            child.FormBorderStyle = FormBorderStyle.None;
+            child.Dock = DockStyle.Fill;
+            panel2.Controls.Add(child);
+            panel2.Tag = child;
+            child.BringToFront();
+            child.Show();
+        }
     }
 }

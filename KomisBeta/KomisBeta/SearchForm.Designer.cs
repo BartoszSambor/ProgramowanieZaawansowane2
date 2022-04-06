@@ -57,6 +57,9 @@ namespace KomisBeta
             this.label13 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +67,7 @@ namespace KomisBeta
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(587, 47);
+            this.label7.Location = new System.Drawing.Point(593, 47);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 30;
@@ -158,9 +161,9 @@ namespace KomisBeta
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 107);
+            this.panel1.Location = new System.Drawing.Point(0, 138);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1061, 514);
+            this.panel1.Size = new System.Drawing.Size(876, 483);
             this.panel1.TabIndex = 37;
             // 
             // tableLayoutPanel1
@@ -176,11 +179,14 @@ namespace KomisBeta
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1061, 0);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(876, 0);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.textBox5);
@@ -209,12 +215,12 @@ namespace KomisBeta
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1061, 107);
+            this.panel2.Size = new System.Drawing.Size(876, 138);
             this.panel2.TabIndex = 38;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(974, 78);
+            this.button3.Location = new System.Drawing.Point(752, 21);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 0;
@@ -338,7 +344,7 @@ namespace KomisBeta
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(954, 12);
+            this.button1.Location = new System.Drawing.Point(642, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 23);
             this.button1.TabIndex = 52;
@@ -346,16 +352,44 @@ namespace KomisBeta
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(12, 122);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(37, 13);
+            this.label14.TabIndex = 53;
+            this.label14.Text = "Marka";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(85, 122);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(36, 13);
+            this.label15.TabIndex = 54;
+            this.label15.Text = "Model";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(168, 122);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(54, 13);
+            this.label16.TabIndex = 55;
+            this.label16.Text = "Nadwozie";
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 621);
+            this.ClientSize = new System.Drawing.Size(876, 621);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "SearchForm";
             this.Text = "SearchForm";
             this.Load += new System.EventHandler(this.SearchForm_Load);
+            this.Shown += new System.EventHandler(this.SearchForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -393,5 +427,8 @@ namespace KomisBeta
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
     }
 }

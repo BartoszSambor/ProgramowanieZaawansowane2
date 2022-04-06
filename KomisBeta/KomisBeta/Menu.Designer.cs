@@ -47,7 +47,7 @@ namespace KomisBeta
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(170, 450);
+            this.panel1.Size = new System.Drawing.Size(170, 386);
             this.panel1.TabIndex = 0;
             // 
             // CalendarButton
@@ -77,6 +77,7 @@ namespace KomisBeta
             // 
             // SearchButton
             // 
+            this.SearchButton.AutoSize = true;
             this.SearchButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.SearchButton.Location = new System.Drawing.Point(0, 29);
@@ -103,19 +104,23 @@ namespace KomisBeta
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(170, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(630, 450);
+            this.panel2.Size = new System.Drawing.Size(547, 386);
             this.panel2.TabIndex = 1;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(717, 386);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Menu";
             this.Text = "Komis";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

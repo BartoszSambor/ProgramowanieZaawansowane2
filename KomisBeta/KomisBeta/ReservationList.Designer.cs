@@ -38,19 +38,23 @@ namespace KomisBeta
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(448, 49);
+            this.panel1.Size = new System.Drawing.Size(424, 97);
             this.panel1.TabIndex = 1;
             // 
             // label2
@@ -72,7 +76,7 @@ namespace KomisBeta
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(325, 13);
+            this.button1.Location = new System.Drawing.Point(221, 59);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -87,9 +91,9 @@ namespace KomisBeta
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.listBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 49);
+            this.panel2.Location = new System.Drawing.Point(0, 97);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(448, 401);
+            this.panel2.Size = new System.Drawing.Size(424, 383);
             this.panel2.TabIndex = 2;
             // 
             // listBox1
@@ -127,11 +131,27 @@ namespace KomisBeta
             this.label4.TabIndex = 3;
             this.label4.Text = "Obecne rezerwacje samochodu";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 62);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(173, 20);
+            this.textBox1.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 46);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(140, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Imię i nazwisko użytkownika";
+            // 
             // ReservationList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 450);
+            this.ClientSize = new System.Drawing.Size(424, 480);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ReservationList";
@@ -155,5 +175,7 @@ namespace KomisBeta
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

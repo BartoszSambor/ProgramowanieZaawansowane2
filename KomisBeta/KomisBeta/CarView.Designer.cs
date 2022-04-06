@@ -45,7 +45,7 @@ namespace KomisBeta
             // 
             this.pictureBox1.Location = new System.Drawing.Point(688, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(130, 126);
+            this.pictureBox1.Size = new System.Drawing.Size(130, 109);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -136,7 +136,7 @@ namespace KomisBeta
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "CarView";
-            this.Size = new System.Drawing.Size(924, 132);
+            this.Size = new System.Drawing.Size(924, 115);
             this.Load += new System.EventHandler(this.CarView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

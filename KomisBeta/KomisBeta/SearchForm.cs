@@ -16,7 +16,6 @@ namespace KomisBeta
     {
         private List<Car> cars = null;
         private List<Car> currentCars = null;
-        int counter = 0;
         Menu parent;
         public SearchForm(Menu parent)
         {
@@ -143,7 +142,6 @@ namespace KomisBeta
 
         private void FilterComboBox()
         {
-
             var c1 = comboBox1.SelectedItem;
             comboBox1.Items.Clear();
             var items = currentCars.Select(x => x.body.ToString()).Distinct();
@@ -181,6 +179,18 @@ namespace KomisBeta
             comboBox4.SelectedItem = c4;            
         }
 
+        private void ResetComboBox()
+        {
+            comboBox1.SelectedItem = null;
+            comboBox1.Items.Clear();
+            comboBox2.SelectedItem = null;
+            comboBox2.Items.Clear();
+            comboBox3.SelectedItem = null;
+            comboBox3.Items.Clear();
+            comboBox4.SelectedItem = null;
+            comboBox4.Items.Clear();
+        }
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             currentCars = cars;
@@ -190,8 +200,13 @@ namespace KomisBeta
             textBox4.Text = String.Empty;
             textBox5.Text = String.Empty;
             textBox6.Text = String.Empty;
-            FilterComboBox();
+            ResetComboBox();
             button3_Click(this, e);
+        }
+
+        private void SearchForm_Shown(object sender, EventArgs e)
+        {
+            this.SearchForm_Load(this, e);
         }
     }
 }

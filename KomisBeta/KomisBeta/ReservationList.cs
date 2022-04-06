@@ -18,12 +18,12 @@ namespace KomisBeta
         public ReservationList()
         {
             InitializeComponent();
-            LoadReservations();
         }
 
         public void SelectCar(Car selectedCar)
         {
             this.selectedCar = selectedCar;
+            LoadReservations();
         }
 
         private void ReservationList_Load(object sender, EventArgs e)
@@ -38,12 +38,13 @@ namespace KomisBeta
 
         private void LoadReservations()
         {
-            List<(string, DateTime)> reservations = new List<(string, DateTime)>();
+            List<(string, DateTime, string)> reservations = new List<(string, DateTime, string)>();
 
             var parser = new Microsoft.VisualBasic.FileIO.TextFieldParser(@"data\\reservations.csv");
             parser.TextFieldType = Microsoft.VisualBasic.FileIO.FieldType.Delimited;
             parser.SetDelimiters(new string[] { ", " });
             Debug.WriteLine("RESERVATIONS");
+            Debug.WriteLine(selectedCar.filePath);
             while (!parser.EndOfData)
             {
                 string[] row = parser.ReadFields();
@@ -51,13 +52,18 @@ namespace KomisBeta
                 {
                     Debug.WriteLine(x);
                 }
-                reservations.Add((row[1], DateTime.Parse(row[0])));
+                reservations.Add((row[1], DateTime.Parse(row[0]), row[2]));
             }
+
+            Debug.WriteLine("RESERVATIONS22222");
+            reservations = reservations.Where(x => x.Item1.ToString().Equals(selectedCar.filePath)).ToList();
+            listBox1.Items.Clear();
             foreach (var a in reservations)
             {
-                Debug.WriteLine(a.Item1 + " " + a.Item2);
+                Debug.WriteLine(a.Item1 + " " + a.Item2 + " " + a.Item2.ToString().Substring(5));
                 listBox1.Items.Add(
                     a.Item2.ToString() + "\t" + a.Item2.AddHours(1).ToString()
+                    + "\t" + a.Item3
                     );
             }
 
@@ -66,7 +72,8 @@ namespace KomisBeta
 
         private void AddReservation()
         {
-            File.AppendAllText("data/reservations.csv", dateTimePicker1.Value + ", " + selectedCar.filePath + Environment.NewLine);
+            File.AppendAllText("data/reservations.csv", dateTimePicker1.Value + ", " + selectedCar.filePath + ", " + textBox1.Text + Environment.NewLine);
+            LoadReservations();
         }
     }
 }

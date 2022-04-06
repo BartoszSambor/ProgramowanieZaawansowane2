@@ -1,0 +1,15 @@
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\KomisBeta\KomisBeta\bin\Debug\KomisBeta.exe.config
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\KomisBeta\KomisBeta\bin\Debug\KomisBeta.exe
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\KomisBeta\KomisBeta\bin\Debug\KomisBeta.pdb
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\KomisBeta\KomisBeta\obj\Debug\KomisBeta.csprojAssemblyReference.cache
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\KomisBeta\KomisBeta\obj\Debug\KomisBeta.Form1.resources
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\KomisBeta\KomisBeta\obj\Debug\KomisBeta.Menu.resources
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\KomisBeta\KomisBeta\obj\Debug\KomisBeta.Properties.Resources.resources
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\KomisBeta\KomisBeta\obj\Debug\KomisBeta.csproj.GenerateResource.cache
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\KomisBeta\KomisBeta\obj\Debug\KomisBeta.csproj.CoreCompileInputs.cache
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\KomisBeta\KomisBeta\obj\Debug\KomisBeta.exe
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\KomisBeta\KomisBeta\obj\Debug\KomisBeta.pdb
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\KomisBeta\KomisBeta\obj\Debug\KomisBeta.AddForm.resources
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\KomisBeta\KomisBeta\obj\Debug\KomisBeta.SearchForm.resources
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\KomisBeta\KomisBeta\obj\Debug\KomisBeta.CarView.resources
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\KomisBeta\KomisBeta\obj\Debug\KomisBeta.ReservationList.resources

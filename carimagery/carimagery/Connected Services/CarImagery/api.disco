@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://www.carimagery.com/api.asmx?wsdl" docRef="http://www.carimagery.com/api.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://www.carimagery.com/api.asmx" xmlns:q1="http://carimagery.com/" binding="q1:apiSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://www.carimagery.com/api.asmx" xmlns:q2="http://carimagery.com/" binding="q2:apiSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

@@ -1,0 +1,10 @@
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\carimagery\carimagery\bin\Debug\carimagery.exe.config
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\carimagery\carimagery\bin\Debug\carimagery.exe
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\carimagery\carimagery\bin\Debug\carimagery.pdb
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\carimagery\carimagery\obj\Debug\carimagery.csprojAssemblyReference.cache
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\carimagery\carimagery\obj\Debug\carimagery.Form1.resources
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\carimagery\carimagery\obj\Debug\carimagery.Properties.Resources.resources
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\carimagery\carimagery\obj\Debug\carimagery.csproj.GenerateResource.cache
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\carimagery\carimagery\obj\Debug\carimagery.csproj.CoreCompileInputs.cache
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\carimagery\carimagery\obj\Debug\carimagery.exe
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\carimagery\carimagery\obj\Debug\carimagery.pdb

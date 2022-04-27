@@ -1,0 +1,10 @@
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\PrzeglądarkaBaz\PrzeglądarkaBaz\bin\Debug\PrzeglądarkaBaz.exe.config
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\PrzeglądarkaBaz\PrzeglądarkaBaz\bin\Debug\PrzeglądarkaBaz.exe
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\PrzeglądarkaBaz\PrzeglądarkaBaz\bin\Debug\PrzeglądarkaBaz.pdb
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\PrzeglądarkaBaz\PrzeglądarkaBaz\obj\Debug\PrzeglądarkaBaz.csprojAssemblyReference.cache
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\PrzeglądarkaBaz\PrzeglądarkaBaz\obj\Debug\PrzeglądarkaBaz.Form1.resources
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\PrzeglądarkaBaz\PrzeglądarkaBaz\obj\Debug\PrzeglądarkaBaz.Properties.Resources.resources
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\PrzeglądarkaBaz\PrzeglądarkaBaz\obj\Debug\PrzeglądarkaBaz.csproj.GenerateResource.cache
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\PrzeglądarkaBaz\PrzeglądarkaBaz\obj\Debug\PrzeglądarkaBaz.csproj.CoreCompileInputs.cache
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\PrzeglądarkaBaz\PrzeglądarkaBaz\obj\Debug\PrzeglądarkaBaz.exe
+C:\Users\Bartek\source\repos\ProgramowanieZaawansowane2\PrzeglądarkaBaz\PrzeglądarkaBaz\obj\Debug\PrzeglądarkaBaz.pdb

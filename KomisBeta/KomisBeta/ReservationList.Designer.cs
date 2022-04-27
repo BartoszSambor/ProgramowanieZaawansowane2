@@ -30,16 +30,17 @@ namespace KomisBeta
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -57,14 +58,30 @@ namespace KomisBeta
             this.panel1.Size = new System.Drawing.Size(424, 97);
             this.panel1.TabIndex = 1;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 46);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(140, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Imię i nazwisko użytkownika";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 62);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(173, 20);
+            this.textBox1.TabIndex = 5;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(218, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(99, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
+            this.label2.Text = "Wybierz datę i czas";
             // 
             // dateTimePicker1
             // 
@@ -86,6 +103,7 @@ namespace KomisBeta
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
@@ -96,13 +114,23 @@ namespace KomisBeta
             this.panel2.Size = new System.Drawing.Size(424, 383);
             this.panel2.TabIndex = 2;
             // 
-            // listBox1
+            // label4
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 54);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(388, 316);
-            this.listBox1.TabIndex = 0;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(97, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(157, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Obecne rezerwacje samochodu";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(173, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Zakończenie";
             // 
             // label1
             // 
@@ -113,39 +141,22 @@ namespace KomisBeta
             this.label1.TabIndex = 1;
             this.label1.Text = "Rozpoczęcie";
             // 
-            // label3
+            // listBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(255, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Zakończenie";
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(12, 54);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(388, 316);
+            this.listBox1.TabIndex = 0;
             // 
-            // label4
+            // label6
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(97, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Obecne rezerwacje samochodu";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(173, 20);
-            this.textBox1.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 46);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Imię i nazwisko użytkownika";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(305, 38);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Nazwisko";
             // 
             // ReservationList
             // 
@@ -177,5 +188,6 @@ namespace KomisBeta
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
     }
 }

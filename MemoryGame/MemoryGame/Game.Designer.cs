@@ -37,12 +37,19 @@ namespace MemoryGame
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timeLabel = new System.Windows.Forms.Label();
+            this.pauseButton = new System.Windows.Forms.Button();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.pauseButton);
+            this.panel1.Controls.Add(this.timeLabel);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.trackBar1);
             this.panel1.Controls.Add(this.label1);
@@ -108,6 +115,40 @@ namespace MemoryGame
             this.timer2.Interval = 3000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Location = new System.Drawing.Point(525, 9);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(13, 13);
+            this.timeLabel.TabIndex = 3;
+            this.timeLabel.Text = "0";
+            // 
+            // pauseButton
+            // 
+            this.pauseButton.Location = new System.Drawing.Point(479, 25);
+            this.pauseButton.Name = "pauseButton";
+            this.pauseButton.Size = new System.Drawing.Size(75, 23);
+            this.pauseButton.TabIndex = 4;
+            this.pauseButton.Text = "Stop";
+            this.pauseButton.UseVisualStyleBackColor = true;
+            this.pauseButton.Click += new System.EventHandler(this.pauseButton_Click);
+            // 
+            // timer3
+            // 
+            this.timer3.Enabled = true;
+            this.timer3.Interval = 300;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(476, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Time:";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,5 +178,9 @@ namespace MemoryGame
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button pauseButton;
+        private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Label label3;
     }
 }

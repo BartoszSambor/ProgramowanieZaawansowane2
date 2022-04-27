@@ -14,8 +14,7 @@ namespace KomisBeta
         Coupe,
         Combi,
         Sedan,
-        SUV,
-
+        SUV
     }
 
     public enum Fuel

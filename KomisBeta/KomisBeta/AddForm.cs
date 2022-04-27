@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace KomisBeta
 {
@@ -30,19 +29,19 @@ namespace KomisBeta
         {
             comboBox1.Items.Clear();
             comboBox1.DataSource = Enum.GetValues(typeof(Body));
-            comboBox1.Text = "Wybierz";
 
             comboBox2.Items.Clear();
             comboBox2.DataSource = Enum.GetValues(typeof(Fuel));
-            comboBox2.Text = "Wybierz";
+            Clear();
         }
 
+        // Open file dialog to load car image
         private void button1_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
+                openFileDialog.Filter = "Image Files(*.png;*.jpg)|*.png;*.jpg";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
 
@@ -76,15 +75,18 @@ namespace KomisBeta
             return car;
         }
 
+        // Save car
         private void button3_Click(object sender, EventArgs e)
         {
+            if (!ValidateDataCompleteness())
+            {
+                MessageBox.Show("Nie uzupełniono wymaganych danych", "Błąd");
+                return;
+            }
+
             var car = CreateCar();
             car.SaveImage();
             Debug.WriteLine(car.ToCSV());
-/*            using (StreamWriter sw = File.CreateText("data/data.csv"))
-            {
-                sw.WriteLine(car.ToCSV());
-            }*/
             File.AppendAllText("data/data.csv", car.ToCSV() + Environment.NewLine);
             
             this.Clear();
@@ -100,6 +102,59 @@ namespace KomisBeta
             comboBox1.SelectedIndex = -1;
             comboBox2.SelectedIndex = -1;
             pictureBox1.Image = Properties.Resources.CarDefault;
+            comboBox2.Text = "Wybierz";
+            comboBox1.Text = "Wybierz";
+
+        }
+
+        private void textBox3_Validating(object sender, CancelEventArgs e)
+        {
+            if (!int.TryParse(textBox3.Text, out _))
+            {
+                MessageBox.Show("Rok musi być liczbą całkowitą", "Błąd");
+                e.Cancel = true;
+                textBox3.Select(0, textBox3.Text.Length);
+            }
+        }
+
+        private void textBox4_Validating(object sender, CancelEventArgs e)
+        {
+            int millage;
+            if (!int.TryParse(textBox4.Text, out millage) || millage < 0)
+            {
+                MessageBox.Show("Przebieg musi być liczbą całkowitą dodatnią", "Błąd");
+                e.Cancel = true;
+                textBox4.Select(0, textBox4.Text.Length);
+            }
+        }
+
+        private void textBox5_Validating(object sender, CancelEventArgs e)
+        {
+            int price;
+            if (!int.TryParse(textBox5.Text, out price) || price < 0)
+            {
+                MessageBox.Show("Cena musi być liczbą całkowitą dodatnią", "Błąd");
+                e.Cancel = true;
+                textBox5.Select(0, textBox5.Text.Length);
+            }
+        }
+
+        private bool ValidateDataCompleteness()
+        {
+            bool result = true;
+            if (textBox1.Text == string.Empty) result = false;
+            if (textBox2.Text == string.Empty) result = false;
+            if (textBox3.Text == string.Empty) result = false;
+            if (textBox4.Text == string.Empty) result = false;
+            if (textBox5.Text == string.Empty) result = false;
+            if (comboBox1.SelectedIndex == -1) result = false;
+            if (comboBox2.SelectedIndex == -1) result = false;
+            return result;
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

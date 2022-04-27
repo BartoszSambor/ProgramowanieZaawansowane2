@@ -15,6 +15,10 @@ namespace MemoryGame
     {
         // counting time of the game
         private Stopwatch watch;
+        // player can't pause game after revealing first card
+        private bool hadStarted = false;
+        // time counting will not start until all cards will hide
+        private bool cardsWereHidden = false;
         // store game settings
         private Settings settings;
         // helper variables
@@ -25,6 +29,8 @@ namespace MemoryGame
         private Image reversImage;
         // storing original images of cards (before reversing)
         List<(PictureBox, Image)> images = new List<(PictureBox, Image)>();
+        // Pausing game
+        bool isPaused = false;
 
         public Game(Settings settings)
         {
@@ -133,8 +139,13 @@ namespace MemoryGame
 
         }
 
+        // Any card clicked
         private void pictureBoxClicked(object sender, EventArgs e)
         {
+            // Player can't do anything while game is paused
+            if (isPaused)
+                return;
+
             // The timer is only on after two non-matching 
             // icons have been shown to the player, 
             // so ignore any clicks if the timer is running
@@ -146,8 +157,12 @@ namespace MemoryGame
 
             if (clickedLabel != null)
             {
+                // If player clicked card and game is not paused he can't pause game again
+                hadStarted = true;
+                pauseButton.Enabled = false;
 
-                // If the clicked picture is reversed, the player clicked
+
+                // If the clicked picture is not reversed, the player clicked
                 // an icon that's already been revealed --
                 // ignore the click
                 if (clickedLabel.Image != reversImage)
@@ -236,20 +251,23 @@ namespace MemoryGame
             timer2.Interval = settings.timeToRemember*1000;
             RevealAllCards();
             timer2.Start();
-            watch = new Stopwatch();
-            watch.Start();
             timer1.Interval = (int)(settings.hideTime * 1000);
             label2.Text = (trackBar1.Value * 100).ToString() + " ms";
+            // Watch will start counting time after all cards are hidden
+            watch = new Stopwatch();
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
             timer2.Stop();
             HideAllCards();
+            // Start counting time
+            watch.Start();
         }
 
         private void HideAllCards()
         {
+            cardsWereHidden = true;
             foreach (Control control in tableLayoutPanel.Controls)
             {
                 PictureBox iconLabel = control as PictureBox;
@@ -281,5 +299,30 @@ namespace MemoryGame
             timer1.Interval = trackBar1.Value * 100;
         }
 
+        private void pauseButton_Click(object sender, EventArgs e)
+        {
+            // do nothing if player already revealted any card
+            // or if all cards are revealted at the beggining
+            if (hadStarted || !cardsWereHidden)
+            {
+                return;
+            }
+
+            isPaused = !isPaused;
+            if (isPaused)
+            {
+                pauseButton.Text = "Start";
+                watch.Stop();
+            } else
+            {
+                pauseButton.Text = "Stop";
+                watch.Start();
+            }
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            timeLabel.Text = watch.Elapsed.Seconds.ToString();
+        }
     }
 }

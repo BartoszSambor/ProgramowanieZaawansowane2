@@ -23,8 +23,21 @@ namespace KomisBeta
             this.parent = parent;
         }
 
+        public void AddCar(Car car)
+        {
+            if(cars != null)
+            {
+                cars.Append(car);
+            }
+        }
+
 
         private void SearchForm_Load(object sender, EventArgs e)
+        {
+            LoadCarsFromFile();
+        }
+
+        private void LoadCarsFromFile()
         {
             cars = new List<Car>();
             var parser = new Microsoft.VisualBasic.FileIO.TextFieldParser(@"data\\data.csv");
@@ -47,14 +60,12 @@ namespace KomisBeta
 
                 cars.Add(car);
             }
-            foreach(var a in cars)
+            foreach (var a in cars)
             {
                 Debug.WriteLine(a.ToCSV());
             }
             currentCars = GetFilteredCars();
             FilterComboBox();
-
-
         }
 
 
@@ -62,9 +73,13 @@ namespace KomisBeta
 
         private void button3_Click(object sender, EventArgs e)
         {
+            UpdateList();
+        }
+        private void UpdateList()
+        {
+            LoadCarsFromFile();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel1.RowStyles.Clear();
-            Debug.WriteLine("START");
             List<Car> carsTmp;
             carsTmp = GetFilteredCars();
             tableLayoutPanel1.Controls.Clear();
@@ -81,6 +96,7 @@ namespace KomisBeta
             tableLayoutPanel1.ResumeLayout();
             currentCars = GetFilteredCars();
             FilterComboBox();
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -207,6 +223,76 @@ namespace KomisBeta
         private void SearchForm_Shown(object sender, EventArgs e)
         {
             this.SearchForm_Load(this, e);
+        }
+
+
+
+        private void comboBox3_Validating(object sender, CancelEventArgs e)
+        {
+            if(comboBox3.Items.Count > 1)
+                UpdateList();
+        }
+
+
+
+        private void comboBox4_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBox3.Items.Count > 1)
+                UpdateList();
+        }
+
+        private void comboBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBox3.Items.Count > 1)
+                UpdateList();
+        }
+
+        private void comboBox2_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBox3.Items.Count > 1)
+                UpdateList();
+        }
+
+        private void textBox4_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateTextBoxPositiveOr0Int(textBox4, sender, e);
+        }
+
+        private void textBox3_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateTextBoxPositiveOr0Int(textBox3, sender, e);
+        }
+
+        private void textBox6_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateTextBoxPositiveOr0Int(textBox6, sender, e);
+        }
+
+        private void textBox5_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateTextBoxPositiveOr0Int(textBox5, sender, e);
+        }
+
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateTextBoxPositiveOr0Int(textBox1, sender, e);
+        }
+
+        private void textBox2_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateTextBoxPositiveOr0Int(textBox2, sender, e);
+        }
+
+        // Checks if provided TextBox contains non-negative integer
+        private void ValidateTextBoxPositiveOr0Int(TextBox tb, object sender, CancelEventArgs e)
+        {
+            int value;
+            if (!int.TryParse(tb.Text, out value) || value < 0)
+            {
+                MessageBox.Show("Cena musi być liczbą całkowitą dodatnią", "Błąd");
+                e.Cancel = true;
+                tb.Select(0, tb.Text.Length);
+            }
         }
     }
 }

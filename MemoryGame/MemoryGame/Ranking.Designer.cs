@@ -85,6 +85,7 @@ namespace MemoryGame
             this.MaximizeBox = false;
             this.Name = "Ranking";
             this.Text = "Ranking";
+            this.Load += new System.EventHandler(this.Ranking_Load);
             this.ResumeLayout(false);
 
         }

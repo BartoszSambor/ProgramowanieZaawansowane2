@@ -15,6 +15,9 @@ namespace KomisBeta
     public partial class ReservationList : Form
     {
         Car selectedCar = null;
+
+        //list containing: Car id, reservation time, user name
+        List<(string, DateTime, string)> reservations; 
         public ReservationList()
         {
             InitializeComponent();
@@ -23,6 +26,7 @@ namespace KomisBeta
         public void SelectCar(Car selectedCar)
         {
             this.selectedCar = selectedCar;
+            reservations = new List<(string, DateTime, string)>();
             LoadReservations();
         }
 
@@ -38,12 +42,13 @@ namespace KomisBeta
 
         private void LoadReservations()
         {
-            List<(string, DateTime, string)> reservations = new List<(string, DateTime, string)>();
+            //Clear list
+            reservations.Clear();
 
+            //Load reservations list from file
             var parser = new Microsoft.VisualBasic.FileIO.TextFieldParser(@"data\\reservations.csv");
             parser.TextFieldType = Microsoft.VisualBasic.FileIO.FieldType.Delimited;
             parser.SetDelimiters(new string[] { ", " });
-            Debug.WriteLine("RESERVATIONS");
             Debug.WriteLine(selectedCar.filePath);
             while (!parser.EndOfData)
             {
@@ -55,7 +60,10 @@ namespace KomisBeta
                 reservations.Add((row[1], DateTime.Parse(row[0]), row[2]));
             }
 
-            Debug.WriteLine("RESERVATIONS22222");
+            //Sort reservations by starting time
+            reservations.Sort((x, y) => x.Item2.CompareTo(y.Item2));
+
+            //Set Listbox1 content to selected car reservations
             reservations = reservations.Where(x => x.Item1.ToString().Equals(selectedCar.filePath)).ToList();
             listBox1.Items.Clear();
             foreach (var a in reservations)
@@ -66,12 +74,32 @@ namespace KomisBeta
                     + "\t" + a.Item3
                     );
             }
-
-
         }
 
         private void AddReservation()
         {
+            if (textBox1.Text == string.Empty)
+            {
+                MessageBox.Show("Nie podano nazwy osoby rezerwującej", "Błąd");
+                return;
+            }
+
+            // Check if no reservation collide with selected time
+            var startTime = dateTimePicker1.Value;
+            var endTime= dateTimePicker1.Value.AddHours(1);
+            foreach(var elem in reservations)
+            {
+                var r_startTime = elem.Item2;
+                var r_endTime = r_startTime.AddHours(1);
+
+                if( (r_startTime <= startTime && startTime <= r_endTime) || 
+                    (r_startTime <= endTime && endTime <= r_endTime))
+                {
+                    MessageBox.Show("Podana data koliduje z istniejącymi rezerwacjami", "Błąd");
+                    return;
+                }
+            }
+
             File.AppendAllText("data/reservations.csv", dateTimePicker1.Value + ", " + selectedCar.filePath + ", " + textBox1.Text + Environment.NewLine);
             LoadReservations();
         }

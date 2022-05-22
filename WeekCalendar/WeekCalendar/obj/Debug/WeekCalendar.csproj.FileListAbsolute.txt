@@ -1,0 +1,8 @@
+C:\Users\Bartek\source\repos\WeekCalendar\WeekCalendar\bin\Debug\WeekCalendar.dll
+C:\Users\Bartek\source\repos\WeekCalendar\WeekCalendar\bin\Debug\WeekCalendar.pdb
+C:\Users\Bartek\source\repos\WeekCalendar\WeekCalendar\obj\Debug\WeekCalendar.csproj.AssemblyReference.cache
+C:\Users\Bartek\source\repos\WeekCalendar\WeekCalendar\obj\Debug\WeekCalendar.csproj.CoreCompileInputs.cache
+C:\Users\Bartek\source\repos\WeekCalendar\WeekCalendar\obj\Debug\WeekCalendar.dll
+C:\Users\Bartek\source\repos\WeekCalendar\WeekCalendar\obj\Debug\WeekCalendar.pdb
+C:\Users\Bartek\source\repos\WeekCalendar\WeekCalendar\obj\Debug\WeekCalendar.WeekPlanner.resources
+C:\Users\Bartek\source\repos\WeekCalendar\WeekCalendar\obj\Debug\WeekCalendar.csproj.GenerateResource.cache

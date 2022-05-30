@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,20 +18,31 @@ namespace PlannerTest
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-/*            string[] s = textBox1.Text.Split(' ');
-            int x = int.Parse(s[0]);
-            int y = int.Parse(s[1]);*/
-
-           //weekPlanner1.SetPeriodValue(textBox2.Text, colorDialog1.Color, weekPlanner1);
-            weekPlanner1.SetSelectedPeriodsValue(textBox2.Text, colorDialog1.Color);
+            weekPlanner1.ShowMsgBox = checkBox1.Checked;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            colorDialog1.ShowDialog();
-            button2.BackColor = colorDialog1.Color;
+            int minutes;
+            if(textBox1.Text == String.Empty)
+            {
+                return;
+            }
+            if (!int.TryParse(textBox1.Text, out minutes))
+            {
+                textBox1.Text = "15";
+                MessageBox.Show("Please enter a valid number of minutes");
+            } else
+            {
+                weekPlanner1.RemindBefore = uint.Parse(textBox1.Text);
+            }
+        }
+
+        private void weekPlanner1_EventReminder(object sender, EventArgs e)
+        {
+            label4.Text = "Last time event wall called: " + DateTime.Now.ToString();
         }
     }
 }

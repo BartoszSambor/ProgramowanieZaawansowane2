@@ -35,11 +35,14 @@ namespace passwordReq
             }
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            imageCheckBoxList1.SpecialCharacters = textBox1.Text;
+        }
 
-
-
-
-
-
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            imageCheckBoxList1.MinLength = (int)numericUpDown1.Value;
+        }
     }
 }

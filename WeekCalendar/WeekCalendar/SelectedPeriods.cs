@@ -12,10 +12,12 @@ namespace WeekCalendar
     internal class SelectedPeriods
     {
         private List<Period> selected;
+        private List<Period> unselected;
 
         public SelectedPeriods()
         {
             selected = new List<Period>();
+            unselected = new List<Period>();
         }
 
         public void SelectPeriod(Period period)
@@ -31,7 +33,7 @@ namespace WeekCalendar
             else
             {
 
-                int min = 10, max = -10;
+                int min = 30, max = -10;
                 // Search for the min and max row in selected
                 foreach (Period p in selected)
                 {
@@ -51,17 +53,11 @@ namespace WeekCalendar
                 }
                 else
                 {
+                    // copy selected to unselected
+                    unselected.AddRange(selected);
                     selected.Clear();
                     selected.Add(period);
                 }
-            }
- 
-
-            Debug.WriteLine("/////////////////");
-            Debug.WriteLine(selected[0].Column.ToString() + " " + period.Column.ToString());
-            foreach (var s in selected)
-            {
-                Debug.WriteLine("Selected: " + s.Column + " " + s.Row);
             }
         }
 
@@ -80,6 +76,11 @@ namespace WeekCalendar
         public List<Period> GetSelectedPeriods()
         {
             return selected;
+        }
+        
+        public List<Period> GetPreviouslySelected()
+        {
+            return unselected;
         }
     }
 }

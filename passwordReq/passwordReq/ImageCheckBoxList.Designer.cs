@@ -68,7 +68,7 @@
             // 
             this.imageCheckBox1.AutoSize = true;
             this.imageCheckBox1.IsChecked = false;
-            this.imageCheckBox1.LabelText = "at least 8 charackers";
+            this.imageCheckBox1.LabelText = "at least 8 characters";
             this.imageCheckBox1.Location = new System.Drawing.Point(3, 3);
             this.imageCheckBox1.Name = "imageCheckBox1";
             this.imageCheckBox1.Size = new System.Drawing.Size(190, 35);

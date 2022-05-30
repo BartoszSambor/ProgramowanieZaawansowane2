@@ -28,7 +28,16 @@ namespace passwordReq
             imageCheckBox3.IsChecked = checker.ContainUpperCase();
             imageCheckBox4.IsChecked = checker.ContainDigit();
         }
-        
+
+        private void Refreshboxes()
+        {
+            imageCheckBox1.IsChecked = checker.CorrectLength();
+            imageCheckBox2.IsChecked = checker.ContainSpecialCharacter();
+            imageCheckBox3.IsChecked = checker.ContainUpperCase();
+            imageCheckBox4.IsChecked = checker.ContainDigit();
+
+        }
+
         public bool IsPasswordValid()
         {
             return checker.IsValid();
@@ -38,14 +47,20 @@ namespace passwordReq
         public int MinLength
         {
             get => checker.MinimumLenght;
-            set => checker.MinimumLenght = value;
+            set {
+                checker.MinimumLenght = value;
+                imageCheckBox1.LabelText = "at least " + checker.MinimumLenght + " characters";
+                Refreshboxes();
+                }
         }
 
         [Description("Set of special characters"), Category("Data")]
         public string SpecialCharacters
         {
             get => checker.SpecialCharacters;
-            set => checker.SpecialCharacters = value;
+            set { checker.SpecialCharacters = value;
+                Refreshboxes();
+            }
         }
     }
 }

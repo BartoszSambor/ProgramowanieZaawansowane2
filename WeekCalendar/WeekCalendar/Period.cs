@@ -15,6 +15,7 @@ namespace WeekCalendar
         private int column, row;
         private bool enabled;
         private DateTime start, end;
+        
 
         public Period(Color color, string text, int column, int row, bool enabled)
         {
@@ -71,5 +72,34 @@ namespace WeekCalendar
             get { return start; }
             set { start = value; }
         }
+
+        public DateTime End
+        {
+            get { return end; }
+            set { end = value; }
+        }
+        
+        public String ToCSV()
+        {
+            return this.Text + "," + this.Color.ToArgb() + "," + this.Column + "," + this.Row + "," + this.Enabled + "," + this.Start.ToString() + "," + this.End.ToString();
+        }
+
+        public static Period FromCSV(string csv)
+        {
+            string[] values = csv.Split(',');
+            return new Period(Color.FromArgb(Convert.ToInt32(values[1])), values[0], Convert.ToInt32(values[2]), Convert.ToInt32(values[3]), Convert.ToBoolean(values[4]), DateTime.Parse(values[5]));
+        }
+
+        public void Copy(Period period)
+        {
+            this.color = period.color;
+            this.text = period.text;
+            this.column = period.column;
+            this.row = period.row;
+            this.enabled = period.enabled;
+            this.start = period.start;
+            this.end = period.end;
+        }
+
     }
 }

@@ -1,0 +1,14 @@
+C:\Users\Bartek\source\repos\WeekCalendar\PlannerTest\bin\Release\PlannerTest.exe.config
+C:\Users\Bartek\source\repos\WeekCalendar\PlannerTest\bin\Release\PlannerTest.exe
+C:\Users\Bartek\source\repos\WeekCalendar\PlannerTest\bin\Release\PlannerTest.pdb
+C:\Users\Bartek\source\repos\WeekCalendar\PlannerTest\bin\Release\WeekCalendar.dll
+C:\Users\Bartek\source\repos\WeekCalendar\PlannerTest\bin\Release\WeekCalendar.pdb
+C:\Users\Bartek\source\repos\WeekCalendar\PlannerTest\obj\Release\PlannerTest.csproj.AssemblyReference.cache
+C:\Users\Bartek\source\repos\WeekCalendar\PlannerTest\obj\Release\PlannerTest.csproj.SuggestedBindingRedirects.cache
+C:\Users\Bartek\source\repos\WeekCalendar\PlannerTest\obj\Release\PlannerTest.TestForm.resources
+C:\Users\Bartek\source\repos\WeekCalendar\PlannerTest\obj\Release\PlannerTest.Properties.Resources.resources
+C:\Users\Bartek\source\repos\WeekCalendar\PlannerTest\obj\Release\PlannerTest.csproj.GenerateResource.cache
+C:\Users\Bartek\source\repos\WeekCalendar\PlannerTest\obj\Release\PlannerTest.csproj.CoreCompileInputs.cache
+C:\Users\Bartek\source\repos\WeekCalendar\PlannerTest\obj\Release\PlannerTest.csproj.CopyComplete
+C:\Users\Bartek\source\repos\WeekCalendar\PlannerTest\obj\Release\PlannerTest.exe
+C:\Users\Bartek\source\repos\WeekCalendar\PlannerTest\obj\Release\PlannerTest.pdb

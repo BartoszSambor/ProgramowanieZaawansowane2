@@ -1,0 +1,14 @@
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\bin\Debug\LibraryClient.exe.config
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\bin\Debug\LibraryClient.exe
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\bin\Debug\LibraryClient.pdb
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.csproj.AssemblyReference.cache
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.csproj.SuggestedBindingRedirects.cache
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.Form1.resources
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.Properties.Resources.resources
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.csproj.GenerateResource.cache
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.csproj.CoreCompileInputs.cache
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.exe
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.pdb
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.BookBrowsing.resources
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.CreateUpdate.AddingBook.resources
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.CreateUpdate.UpdateBooks.resources

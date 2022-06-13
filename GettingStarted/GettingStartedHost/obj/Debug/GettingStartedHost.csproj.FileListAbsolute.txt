@@ -1,0 +1,16 @@
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\bin\Debug\GettingStartedHost.exe.config
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\bin\Debug\GettingStartedHost.exe
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\bin\Debug\GettingStartedHost.pdb
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\bin\Debug\GettingStartedLib.dll
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\bin\Debug\GettingStartedLib.pdb
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\bin\Debug\GettingStartedLib.dll.config
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\obj\Debug\GettingStartedHost.csproj.AssemblyReference.cache
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\obj\Debug\GettingStartedHost.csproj.SuggestedBindingRedirects.cache
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\obj\Debug\GettingStartedHost.csproj.CoreCompileInputs.cache
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\obj\Debug\GettingStartedHost.csproj.CopyComplete
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\obj\Debug\GettingStartedHost.exe
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\obj\Debug\GettingStartedHost.pdb
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\bin\Debug\EntityFramework.dll
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\bin\Debug\EntityFramework.xml
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedHost\bin\Debug\EntityFramework.SqlServer.xml

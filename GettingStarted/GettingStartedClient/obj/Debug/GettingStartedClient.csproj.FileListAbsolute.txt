@@ -1,0 +1,13 @@
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedClient\bin\Debug\GettingStartedClient.exe.config
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedClient\bin\Debug\GettingStartedClient.exe
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedClient\bin\Debug\GettingStartedClient.pdb
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedClient\obj\Debug\GettingStartedClient.csproj.AssemblyReference.cache
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedClient\obj\Debug\GettingStartedClient.csproj.SuggestedBindingRedirects.cache
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedClient\obj\Debug\GettingStartedClient.csproj.CoreCompileInputs.cache
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedClient\obj\Debug\GettingStartedClient.exe
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedClient\obj\Debug\GettingStartedClient.pdb
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedClient\bin\Debug\EntityFramework.dll
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedClient\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedClient\bin\Debug\EntityFramework.xml
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedClient\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedClient\obj\Debug\GettingStartedClient.csproj.CopyComplete

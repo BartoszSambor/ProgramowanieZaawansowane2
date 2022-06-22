@@ -27,6 +27,7 @@
     <MetadataFile FileName="Microsoft.ServiceModel.Samples.xsd" MetadataType="Schema" ID="36aa635f-cd13-4497-9400-fe1bd3ede800" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="f9d2cb42-52f3-4fdb-95e9-16dfe1951299" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
     <MetadataFile FileName="GettingStartedLib.xsd" MetadataType="Schema" ID="ed1c1217-d462-4b36-95a3-4227ac26ceef" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="7224049e-6321-416b-9e70-d374d5c404f3" SourceId="1" SourceUrl="http://localhost:8000/GettingStarted/CalculatorService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,66 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://Microsoft.ServiceModel.Samples" elementFormDefault="qualified" targetNamespace="http://Microsoft.ServiceModel.Samples" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.datacontract.org/2004/07/GettingStartedLib" />
-  <xs:element name="Add">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="n1" type="xs:double" />
-        <xs:element minOccurs="0" name="n2" type="xs:double" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="AddResult" type="xs:double" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Subtract">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="n1" type="xs:double" />
-        <xs:element minOccurs="0" name="n2" type="xs:double" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="SubtractResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="SubtractResult" type="xs:double" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Multiply">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="n1" type="xs:double" />
-        <xs:element minOccurs="0" name="n2" type="xs:double" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="MultiplyResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="MultiplyResult" type="xs:double" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Divide">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="n1" type="xs:double" />
-        <xs:element minOccurs="0" name="n2" type="xs:double" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="DivideResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="DivideResult" type="xs:double" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="GetBooks">
     <xs:complexType>
       <xs:sequence />
@@ -98,6 +39,185 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="UpdateBookResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowedBooks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowedBooksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GettingStartedLib" minOccurs="0" name="GetBorrowedBooksResult" nillable="true" type="q4:ArrayOfBook" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BorrowBook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GettingStartedLib" minOccurs="0" name="book" nillable="true" type="q5:Book" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BorrowBookResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BorrowBookResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowedBooksAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowedBooksAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GettingStartedLib" minOccurs="0" name="GetBorrowedBooksAllResult" nillable="true" type="q6:ArrayOfBorrowedElem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnBook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GettingStartedLib" minOccurs="0" name="book" nillable="true" type="q7:Book" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnBookResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReturnBookResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GettingStartedLib" minOccurs="0" name="book" nillable="true" type="q8:Book" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBookResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteBookResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowedBooksWithTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBorrowedBooksWithTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GettingStartedLib" minOccurs="0" name="GetBorrowedBooksWithTimeResult" nillable="true" type="q9:ArrayOfBorrowedElem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GettingStartedLib" minOccurs="0" name="GetHistoryResult" nillable="true" type="q10:ArrayOfBorrowedHistory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotifications">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotificationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/GettingStartedLib" minOccurs="0" name="GetNotificationsResult" nillable="true" type="q11:ArrayOfNotification" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotificationsAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotificationsAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/GettingStartedLib" minOccurs="0" name="GetNotificationsAllResult" nillable="true" type="q12:ArrayOfNotification" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClearNotifications">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClearNotificationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ClearNotificationsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubscriptionsAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubscriptionsAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/GettingStartedLib" minOccurs="0" name="GetSubscriptionsAllResult" nillable="true" type="q13:ArrayOfSubscription" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubscriptions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubscriptionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSubscriptionsResult" nillable="true" type="q14:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscribeAndClear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="types" nillable="true" type="q15:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscribeAndClearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubscribeAndClearResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

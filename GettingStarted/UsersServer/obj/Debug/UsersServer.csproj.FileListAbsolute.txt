@@ -1,0 +1,16 @@
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\bin\Debug\UsersServer.dll.config
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\bin\Debug\UsersServer.dll
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\bin\Debug\UsersServer.pdb
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\bin\Debug\EntityFramework.dll
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\bin\Debug\EntityFramework.xml
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\obj\Debug\UsersServer.csproj.AssemblyReference.cache
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\obj\Debug\UsersServer.csproj.CoreCompileInputs.cache
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\obj\Debug\UsersServer.csproj.CopyComplete
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\obj\Debug\UsersServer.dll
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\obj\Debug\UsersServer.pdb
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\obj\Debug\UsersServer.Migrations.init.resources
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\obj\Debug\UsersServer.csproj.GenerateResource.cache
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\obj\Debug\UsersServer.Migrations.roles.resources
+C:\Users\Bartek\source\repos\GettingStarted\UsersServer\obj\Debug\UsersServer.Migrations.test.resources

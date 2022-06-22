@@ -26,6 +26,9 @@ namespace LibraryClient.ServiceReference1 {
         private string AuthorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool BorrowedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CurrencyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -62,6 +65,19 @@ namespace LibraryClient.ServiceReference1 {
                 if ((object.ReferenceEquals(this.AuthorField, value) != true)) {
                     this.AuthorField = value;
                     this.RaisePropertyChanged("Author");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Borrowed {
+            get {
+                return this.BorrowedField;
+            }
+            set {
+                if ((this.BorrowedField.Equals(value) != true)) {
+                    this.BorrowedField = value;
+                    this.RaisePropertyChanged("Borrowed");
                 }
             }
         }
@@ -154,33 +170,445 @@ namespace LibraryClient.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BorrowedElem", Namespace="http://schemas.datacontract.org/2004/07/GettingStartedLib")]
+    [System.SerializableAttribute()]
+    public partial class BorrowedElem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private LibraryClient.ServiceReference1.Book BookField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BookIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> BorrowTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ReturnDeadlineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public LibraryClient.ServiceReference1.Book Book {
+            get {
+                return this.BookField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BookField, value) != true)) {
+                    this.BookField = value;
+                    this.RaisePropertyChanged("Book");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BookId {
+            get {
+                return this.BookIdField;
+            }
+            set {
+                if ((this.BookIdField.Equals(value) != true)) {
+                    this.BookIdField = value;
+                    this.RaisePropertyChanged("BookId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> BorrowTime {
+            get {
+                return this.BorrowTimeField;
+            }
+            set {
+                if ((this.BorrowTimeField.Equals(value) != true)) {
+                    this.BorrowTimeField = value;
+                    this.RaisePropertyChanged("BorrowTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> ReturnDeadline {
+            get {
+                return this.ReturnDeadlineField;
+            }
+            set {
+                if ((this.ReturnDeadlineField.Equals(value) != true)) {
+                    this.ReturnDeadlineField = value;
+                    this.RaisePropertyChanged("ReturnDeadline");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BorrowedHistory", Namespace="http://schemas.datacontract.org/2004/07/GettingStartedLib")]
+    [System.SerializableAttribute()]
+    public partial class BorrowedHistory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private LibraryClient.ServiceReference1.Book BookField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BookIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> BorrowTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ReturnDeadlineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public LibraryClient.ServiceReference1.Book Book {
+            get {
+                return this.BookField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BookField, value) != true)) {
+                    this.BookField = value;
+                    this.RaisePropertyChanged("Book");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BookId {
+            get {
+                return this.BookIdField;
+            }
+            set {
+                if ((this.BookIdField.Equals(value) != true)) {
+                    this.BookIdField = value;
+                    this.RaisePropertyChanged("BookId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> BorrowTime {
+            get {
+                return this.BorrowTimeField;
+            }
+            set {
+                if ((this.BorrowTimeField.Equals(value) != true)) {
+                    this.BorrowTimeField = value;
+                    this.RaisePropertyChanged("BorrowTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> ReturnDeadline {
+            get {
+                return this.ReturnDeadlineField;
+            }
+            set {
+                if ((this.ReturnDeadlineField.Equals(value) != true)) {
+                    this.ReturnDeadlineField = value;
+                    this.RaisePropertyChanged("ReturnDeadline");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Notification", Namespace="http://schemas.datacontract.org/2004/07/GettingStartedLib")]
+    [System.SerializableAttribute()]
+    public partial class Notification : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private LibraryClient.ServiceReference1.Book BookField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BookIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> TimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public LibraryClient.ServiceReference1.Book Book {
+            get {
+                return this.BookField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BookField, value) != true)) {
+                    this.BookField = value;
+                    this.RaisePropertyChanged("Book");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BookId {
+            get {
+                return this.BookIdField;
+            }
+            set {
+                if ((this.BookIdField.Equals(value) != true)) {
+                    this.BookIdField = value;
+                    this.RaisePropertyChanged("BookId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((this.TimeField.Equals(value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Subscription", Namespace="http://schemas.datacontract.org/2004/07/GettingStartedLib")]
+    [System.SerializableAttribute()]
+    public partial class Subscription : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://Microsoft.ServiceModel.Samples", ConfigurationName="ServiceReference1.ICalculator")]
     public interface ICalculator {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Add", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/AddResponse")]
-        double Add(double n1, double n2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Add", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/AddResponse")]
-        System.Threading.Tasks.Task<double> AddAsync(double n1, double n2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Subtract", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/SubtractResponse")]
-        double Subtract(double n1, double n2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Subtract", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/SubtractResponse")]
-        System.Threading.Tasks.Task<double> SubtractAsync(double n1, double n2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Multiply", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/MultiplyResponse")]
-        double Multiply(double n1, double n2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Multiply", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/MultiplyResponse")]
-        System.Threading.Tasks.Task<double> MultiplyAsync(double n1, double n2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Divide", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/DivideResponse")]
-        double Divide(double n1, double n2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Divide", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/DivideResponse")]
-        System.Threading.Tasks.Task<double> DivideAsync(double n1, double n2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetBooks", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetBooksResponse")]
         LibraryClient.ServiceReference1.Book[] GetBooks();
@@ -199,6 +627,86 @@ namespace LibraryClient.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/UpdateBook", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/UpdateBookResponse")]
         System.Threading.Tasks.Task<bool> UpdateBookAsync(LibraryClient.ServiceReference1.Book[] book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooks", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooksResponse")]
+        LibraryClient.ServiceReference1.Book[] GetBorrowedBooks(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooks", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooksResponse")]
+        System.Threading.Tasks.Task<LibraryClient.ServiceReference1.Book[]> GetBorrowedBooksAsync(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/BorrowBook", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/BorrowBookResponse")]
+        bool BorrowBook(string login, LibraryClient.ServiceReference1.Book book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/BorrowBook", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/BorrowBookResponse")]
+        System.Threading.Tasks.Task<bool> BorrowBookAsync(string login, LibraryClient.ServiceReference1.Book book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooksAll", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooksAllResponse")]
+        LibraryClient.ServiceReference1.BorrowedElem[] GetBorrowedBooksAll();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooksAll", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooksAllResponse")]
+        System.Threading.Tasks.Task<LibraryClient.ServiceReference1.BorrowedElem[]> GetBorrowedBooksAllAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/ReturnBook", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/ReturnBookResponse")]
+        bool ReturnBook(string login, LibraryClient.ServiceReference1.Book book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/ReturnBook", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/ReturnBookResponse")]
+        System.Threading.Tasks.Task<bool> ReturnBookAsync(string login, LibraryClient.ServiceReference1.Book book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteBook", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteBookResponse")]
+        bool DeleteBook(LibraryClient.ServiceReference1.Book book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteBook", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteBookResponse")]
+        System.Threading.Tasks.Task<bool> DeleteBookAsync(LibraryClient.ServiceReference1.Book book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooksWithTime", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooksWithTimeRespons" +
+            "e")]
+        LibraryClient.ServiceReference1.BorrowedElem[] GetBorrowedBooksWithTime(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooksWithTime", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooksWithTimeRespons" +
+            "e")]
+        System.Threading.Tasks.Task<LibraryClient.ServiceReference1.BorrowedElem[]> GetBorrowedBooksWithTimeAsync(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetHistory", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetHistoryResponse")]
+        LibraryClient.ServiceReference1.BorrowedHistory[] GetHistory(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetHistory", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetHistoryResponse")]
+        System.Threading.Tasks.Task<LibraryClient.ServiceReference1.BorrowedHistory[]> GetHistoryAsync(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetNotifications", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetNotificationsResponse")]
+        LibraryClient.ServiceReference1.Notification[] GetNotifications(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetNotifications", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetNotificationsResponse")]
+        System.Threading.Tasks.Task<LibraryClient.ServiceReference1.Notification[]> GetNotificationsAsync(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetNotificationsAll", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetNotificationsAllResponse")]
+        LibraryClient.ServiceReference1.Notification[] GetNotificationsAll();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetNotificationsAll", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetNotificationsAllResponse")]
+        System.Threading.Tasks.Task<LibraryClient.ServiceReference1.Notification[]> GetNotificationsAllAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/ClearNotifications", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/ClearNotificationsResponse")]
+        bool ClearNotifications(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/ClearNotifications", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/ClearNotificationsResponse")]
+        System.Threading.Tasks.Task<bool> ClearNotificationsAsync(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetSubscriptionsAll", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetSubscriptionsAllResponse")]
+        LibraryClient.ServiceReference1.Subscription[] GetSubscriptionsAll();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetSubscriptionsAll", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetSubscriptionsAllResponse")]
+        System.Threading.Tasks.Task<LibraryClient.ServiceReference1.Subscription[]> GetSubscriptionsAllAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetSubscriptions", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetSubscriptionsResponse")]
+        string[] GetSubscriptions(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetSubscriptions", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/GetSubscriptionsResponse")]
+        System.Threading.Tasks.Task<string[]> GetSubscriptionsAsync(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/SubscribeAndClear", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/SubscribeAndClearResponse")]
+        bool SubscribeAndClear(string login, string[] types);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/SubscribeAndClear", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/SubscribeAndClearResponse")]
+        System.Threading.Tasks.Task<bool> SubscribeAndClearAsync(string login, string[] types);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -228,38 +736,6 @@ namespace LibraryClient.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public double Add(double n1, double n2) {
-            return base.Channel.Add(n1, n2);
-        }
-        
-        public System.Threading.Tasks.Task<double> AddAsync(double n1, double n2) {
-            return base.Channel.AddAsync(n1, n2);
-        }
-        
-        public double Subtract(double n1, double n2) {
-            return base.Channel.Subtract(n1, n2);
-        }
-        
-        public System.Threading.Tasks.Task<double> SubtractAsync(double n1, double n2) {
-            return base.Channel.SubtractAsync(n1, n2);
-        }
-        
-        public double Multiply(double n1, double n2) {
-            return base.Channel.Multiply(n1, n2);
-        }
-        
-        public System.Threading.Tasks.Task<double> MultiplyAsync(double n1, double n2) {
-            return base.Channel.MultiplyAsync(n1, n2);
-        }
-        
-        public double Divide(double n1, double n2) {
-            return base.Channel.Divide(n1, n2);
-        }
-        
-        public System.Threading.Tasks.Task<double> DivideAsync(double n1, double n2) {
-            return base.Channel.DivideAsync(n1, n2);
-        }
-        
         public LibraryClient.ServiceReference1.Book[] GetBooks() {
             return base.Channel.GetBooks();
         }
@@ -282,6 +758,110 @@ namespace LibraryClient.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> UpdateBookAsync(LibraryClient.ServiceReference1.Book[] book) {
             return base.Channel.UpdateBookAsync(book);
+        }
+        
+        public LibraryClient.ServiceReference1.Book[] GetBorrowedBooks(string login) {
+            return base.Channel.GetBorrowedBooks(login);
+        }
+        
+        public System.Threading.Tasks.Task<LibraryClient.ServiceReference1.Book[]> GetBorrowedBooksAsync(string login) {
+            return base.Channel.GetBorrowedBooksAsync(login);
+        }
+        
+        public bool BorrowBook(string login, LibraryClient.ServiceReference1.Book book) {
+            return base.Channel.BorrowBook(login, book);
+        }
+        
+        public System.Threading.Tasks.Task<bool> BorrowBookAsync(string login, LibraryClient.ServiceReference1.Book book) {
+            return base.Channel.BorrowBookAsync(login, book);
+        }
+        
+        public LibraryClient.ServiceReference1.BorrowedElem[] GetBorrowedBooksAll() {
+            return base.Channel.GetBorrowedBooksAll();
+        }
+        
+        public System.Threading.Tasks.Task<LibraryClient.ServiceReference1.BorrowedElem[]> GetBorrowedBooksAllAsync() {
+            return base.Channel.GetBorrowedBooksAllAsync();
+        }
+        
+        public bool ReturnBook(string login, LibraryClient.ServiceReference1.Book book) {
+            return base.Channel.ReturnBook(login, book);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ReturnBookAsync(string login, LibraryClient.ServiceReference1.Book book) {
+            return base.Channel.ReturnBookAsync(login, book);
+        }
+        
+        public bool DeleteBook(LibraryClient.ServiceReference1.Book book) {
+            return base.Channel.DeleteBook(book);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteBookAsync(LibraryClient.ServiceReference1.Book book) {
+            return base.Channel.DeleteBookAsync(book);
+        }
+        
+        public LibraryClient.ServiceReference1.BorrowedElem[] GetBorrowedBooksWithTime(string login) {
+            return base.Channel.GetBorrowedBooksWithTime(login);
+        }
+        
+        public System.Threading.Tasks.Task<LibraryClient.ServiceReference1.BorrowedElem[]> GetBorrowedBooksWithTimeAsync(string login) {
+            return base.Channel.GetBorrowedBooksWithTimeAsync(login);
+        }
+        
+        public LibraryClient.ServiceReference1.BorrowedHistory[] GetHistory(string login) {
+            return base.Channel.GetHistory(login);
+        }
+        
+        public System.Threading.Tasks.Task<LibraryClient.ServiceReference1.BorrowedHistory[]> GetHistoryAsync(string login) {
+            return base.Channel.GetHistoryAsync(login);
+        }
+        
+        public LibraryClient.ServiceReference1.Notification[] GetNotifications(string login) {
+            return base.Channel.GetNotifications(login);
+        }
+        
+        public System.Threading.Tasks.Task<LibraryClient.ServiceReference1.Notification[]> GetNotificationsAsync(string login) {
+            return base.Channel.GetNotificationsAsync(login);
+        }
+        
+        public LibraryClient.ServiceReference1.Notification[] GetNotificationsAll() {
+            return base.Channel.GetNotificationsAll();
+        }
+        
+        public System.Threading.Tasks.Task<LibraryClient.ServiceReference1.Notification[]> GetNotificationsAllAsync() {
+            return base.Channel.GetNotificationsAllAsync();
+        }
+        
+        public bool ClearNotifications(string login) {
+            return base.Channel.ClearNotifications(login);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ClearNotificationsAsync(string login) {
+            return base.Channel.ClearNotificationsAsync(login);
+        }
+        
+        public LibraryClient.ServiceReference1.Subscription[] GetSubscriptionsAll() {
+            return base.Channel.GetSubscriptionsAll();
+        }
+        
+        public System.Threading.Tasks.Task<LibraryClient.ServiceReference1.Subscription[]> GetSubscriptionsAllAsync() {
+            return base.Channel.GetSubscriptionsAllAsync();
+        }
+        
+        public string[] GetSubscriptions(string login) {
+            return base.Channel.GetSubscriptions(login);
+        }
+        
+        public System.Threading.Tasks.Task<string[]> GetSubscriptionsAsync(string login) {
+            return base.Channel.GetSubscriptionsAsync(login);
+        }
+        
+        public bool SubscribeAndClear(string login, string[] types) {
+            return base.Channel.SubscribeAndClear(login, types);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SubscribeAndClearAsync(string login, string[] types) {
+            return base.Channel.SubscribeAndClearAsync(login, types);
         }
     }
 }

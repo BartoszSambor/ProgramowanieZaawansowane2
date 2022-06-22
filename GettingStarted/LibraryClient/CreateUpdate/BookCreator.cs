@@ -25,17 +25,22 @@ namespace LibraryClient.CreateUpdate
         {
             if (book == null)
             {
-                errorMessage = "Book is null";
+                errorMessage = "Book is empty";
                 return false;
             }
             if (string.IsNullOrEmpty(book.Title))
             {
-                errorMessage = "Title is null";
+                errorMessage = "Title is empty";
                 return false;
             }
             if (string.IsNullOrEmpty(book.Author))
             {
-                errorMessage = "Author is null";
+                errorMessage = "Author is empty";
+                return false;
+            }
+            if (string.IsNullOrEmpty(book.Currency))
+            {
+                errorMessage = "Currency is empty";
                 return false;
             }
             if (book.Price <= 0)

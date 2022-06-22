@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="UsersServer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/UsersServer" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUserServer_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IUserServer_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServer_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserServer_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServer_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUserServer_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServer_GetLibrarians_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibrarians" />
+  </wsdl:message>
+  <wsdl:message name="IUserServer_GetLibrarians_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibrariansResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServer_GetAdmins_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdmins" />
+  </wsdl:message>
+  <wsdl:message name="IUserServer_GetAdmins_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUserServer">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServer/Login" message="tns:IUserServer_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServer/LoginResponse" message="tns:IUserServer_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServer/CreateUser" message="tns:IUserServer_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServer/CreateUserResponse" message="tns:IUserServer_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServer/GetUsers" message="tns:IUserServer_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServer/GetUsersResponse" message="tns:IUserServer_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLibrarians">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServer/GetLibrarians" message="tns:IUserServer_GetLibrarians_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServer/GetLibrariansResponse" message="tns:IUserServer_GetLibrarians_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdmins">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServer/GetAdmins" message="tns:IUserServer_GetAdmins_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServer/GetAdminsResponse" message="tns:IUserServer_GetAdmins_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUserServer" type="tns:IUserServer">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IUserServer/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/IUserServer/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IUserServer/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibrarians">
+      <soap:operation soapAction="http://tempuri.org/IUserServer/GetLibrarians" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdmins">
+      <soap:operation soapAction="http://tempuri.org/IUserServer/GetAdmins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UsersServer">
+    <wsdl:port name="BasicHttpBinding_IUserServer" binding="tns:BasicHttpBinding_IUserServer">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/UsersServer/Service1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

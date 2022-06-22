@@ -55,7 +55,42 @@
       <DependentUpon>BookBrowsing.cs</DependentUpon>
     </Compile>
     <Compile Include="Browsing\ClientBrowser.cs" />
+    <Compile Include="Browsing\History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browsing\History.Designer.cs">
+      <DependentUpon>History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browsing\HistoryAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browsing\HistoryAdmin.Designer.cs">
+      <DependentUpon>HistoryAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browsing\LibrariansView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browsing\LibrariansView.Designer.cs">
+      <DependentUpon>LibrariansView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browsing\MyBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browsing\MyBooks.Designer.cs">
+      <DependentUpon>MyBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browsing\Subscritpions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browsing\Subscritpions.Designer.cs">
+      <DependentUpon>Subscritpions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReference2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -73,16 +108,62 @@
     <Compile Include="CreateUpdate\UpdateBooks.Designer.cs">
       <DependentUpon>UpdateBooks.cs</DependentUpon>
     </Compile>
+    <Compile Include="FirstPage\MenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirstPage\MenuAdmin.Designer.cs">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FirstPage\MenuLibrarian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirstPage\MenuLibrarian.Designer.cs">
+      <DependentUpon>MenuLibrarian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FirstPage\MenuUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirstPage\MenuUser.Designer.cs">
+      <DependentUpon>MenuUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\ExchangeOperations.cs" />
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Browsing\BookBrowsing.resx">
       <DependentUpon>BookBrowsing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Browsing\History.resx">
+      <DependentUpon>History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Browsing\HistoryAdmin.resx">
+      <DependentUpon>HistoryAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Browsing\LibrariansView.resx">
+      <DependentUpon>LibrariansView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Browsing\MyBooks.resx">
+      <DependentUpon>MyBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Browsing\Subscritpions.resx">
+      <DependentUpon>Subscritpions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateUpdate\AddingBook.resx">
       <DependentUpon>AddingBook.cs</DependentUpon>
@@ -90,8 +171,23 @@
     <EmbeddedResource Include="CreateUpdate\UpdateBooks.resx">
       <DependentUpon>UpdateBooks.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FirstPage\MenuAdmin.resx">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirstPage\MenuLibrarian.resx">
+      <DependentUpon>MenuLibrarian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirstPage\MenuUser.resx">
+      <DependentUpon>MenuUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -102,10 +198,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\ServiceReference1\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiceReference1\GettingStartedLib.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceReference1\LibraryClient.ServiceReference1.Book.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\LibraryClient.ServiceReference1.BorrowedElem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\LibraryClient.ServiceReference1.BorrowedHistory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\LibraryClient.ServiceReference1.Notification.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\LibraryClient.ServiceReference1.Subscription.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\Microsoft.ServiceModel.Samples.wsdl" />
@@ -114,6 +225,25 @@
     </None>
     <None Include="Connected Services\ServiceReference1\service.wsdl" />
     <None Include="Connected Services\ServiceReference1\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference2\LibraryClient.ServiceReference2.Admin.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference2\LibraryClient.ServiceReference2.Librarin.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference2\LibraryClient.ServiceReference2.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference2\service.wsdl" />
+    <None Include="Connected Services\ServiceReference2\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference2\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference2\UsersServer.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -134,6 +264,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReference2\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
@@ -147,5 +278,18 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,12 +30,18 @@ namespace LibraryClient.CreateUpdate
                 Author = textBoxAuthor.Text,
                 Price = Decimal.Parse(numericUpDownPrice.Text),
                 Type = textBoxType.Text,
-                Currency = textBoxCurrency.Text,
+                Currency = comboBoxCurrency.Text,
                 Pages = Int32.Parse(numericUpDownPrages.Text)
             }))
             {
                 MessageBox.Show(bk.ErrorMessage);
             }
+        }
+
+        private void AddingBook_Load(object sender, EventArgs e)
+        {
+            comboBoxCurrency.Items.Clear();
+            comboBoxCurrency.Items.AddRange(Logic.ExchangeOperations.GetNames());
         }
     }
 }

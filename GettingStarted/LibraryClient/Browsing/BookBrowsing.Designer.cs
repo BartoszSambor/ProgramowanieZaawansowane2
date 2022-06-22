@@ -30,6 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrowed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxAuthorFilter = new System.Windows.Forms.ComboBox();
             this.buttonClearFilters = new System.Windows.Forms.Button();
             this.buttonFilter = new System.Windows.Forms.Button();
@@ -50,20 +59,15 @@
             this.numericUpDownPagesUp = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.numericUpDownPagesDown = new System.Windows.Forms.NumericUpDown();
-            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonSave = new System.Windows.Forms.Button();
-            this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.currencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonBorrow = new System.Windows.Forms.Button();
+            this.buttonRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPriceDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPriceUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPagesUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPagesDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -74,17 +78,80 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.authorDataGridViewTextBoxColumn,
+            this.Id,
             this.currencyDataGridViewTextBoxColumn,
             this.pagesDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
             this.titleDataGridViewTextBoxColumn,
-            this.typeDataGridViewTextBoxColumn});
+            this.typeDataGridViewTextBoxColumn,
+            this.Borrowed});
             this.dataGridView1.DataSource = this.bookBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(674, 403);
+            this.dataGridView1.Size = new System.Drawing.Size(935, 403);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // authorDataGridViewTextBoxColumn
+            // 
+            this.authorDataGridViewTextBoxColumn.DataPropertyName = "Author";
+            this.authorDataGridViewTextBoxColumn.HeaderText = "Author";
+            this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
+            this.authorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // currencyDataGridViewTextBoxColumn
+            // 
+            this.currencyDataGridViewTextBoxColumn.DataPropertyName = "Currency";
+            this.currencyDataGridViewTextBoxColumn.HeaderText = "Currency";
+            this.currencyDataGridViewTextBoxColumn.Name = "currencyDataGridViewTextBoxColumn";
+            this.currencyDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pagesDataGridViewTextBoxColumn
+            // 
+            this.pagesDataGridViewTextBoxColumn.DataPropertyName = "Pages";
+            this.pagesDataGridViewTextBoxColumn.HeaderText = "Pages";
+            this.pagesDataGridViewTextBoxColumn.Name = "pagesDataGridViewTextBoxColumn";
+            this.pagesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Borrowed
+            // 
+            this.Borrowed.DataPropertyName = "Borrowed";
+            this.Borrowed.HeaderText = "Borrowed";
+            this.Borrowed.Name = "Borrowed";
+            this.Borrowed.ReadOnly = true;
+            // 
+            // bookBindingSource
+            // 
+            this.bookBindingSource.DataSource = typeof(LibraryClient.ServiceReference1.Book);
             // 
             // comboBoxAuthorFilter
             // 
@@ -264,10 +331,6 @@
             this.numericUpDownPagesDown.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownPagesDown.TabIndex = 18;
             // 
-            // bookBindingSource
-            // 
-            this.bookBindingSource.DataSource = typeof(LibraryClient.ServiceReference1.Book);
-            // 
             // buttonSave
             // 
             this.buttonSave.Location = new System.Drawing.Point(583, 517);
@@ -278,53 +341,33 @@
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
-            // authorDataGridViewTextBoxColumn
+            // buttonBorrow
             // 
-            this.authorDataGridViewTextBoxColumn.DataPropertyName = "Author";
-            this.authorDataGridViewTextBoxColumn.HeaderText = "Author";
-            this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
-            this.authorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.buttonBorrow.Location = new System.Drawing.Point(583, 488);
+            this.buttonBorrow.Name = "buttonBorrow";
+            this.buttonBorrow.Size = new System.Drawing.Size(75, 23);
+            this.buttonBorrow.TabIndex = 22;
+            this.buttonBorrow.Text = "Borrow";
+            this.buttonBorrow.UseVisualStyleBackColor = true;
+            this.buttonBorrow.Click += new System.EventHandler(this.buttonBorrow_Click);
             // 
-            // currencyDataGridViewTextBoxColumn
+            // buttonRemove
             // 
-            this.currencyDataGridViewTextBoxColumn.DataPropertyName = "Currency";
-            this.currencyDataGridViewTextBoxColumn.HeaderText = "Currency";
-            this.currencyDataGridViewTextBoxColumn.Name = "currencyDataGridViewTextBoxColumn";
-            this.currencyDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pagesDataGridViewTextBoxColumn
-            // 
-            this.pagesDataGridViewTextBoxColumn.DataPropertyName = "Pages";
-            this.pagesDataGridViewTextBoxColumn.HeaderText = "Pages";
-            this.pagesDataGridViewTextBoxColumn.Name = "pagesDataGridViewTextBoxColumn";
-            this.pagesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // typeDataGridViewTextBoxColumn
-            // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.buttonRemove.Location = new System.Drawing.Point(692, 519);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(75, 23);
+            this.buttonRemove.TabIndex = 23;
+            this.buttonRemove.Text = "Delete";
+            this.buttonRemove.UseVisualStyleBackColor = true;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // BookBrowsing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 552);
+            this.ClientSize = new System.Drawing.Size(949, 552);
+            this.Controls.Add(this.buttonRemove);
+            this.Controls.Add(this.buttonBorrow);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.numericUpDownPagesUp);
             this.Controls.Add(this.label6);
@@ -353,11 +396,11 @@
             this.Text = "BookBrowsing";
             this.Load += new System.EventHandler(this.BookBrowsing_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPriceDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPriceUp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPagesUp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPagesDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,11 +435,15 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown numericUpDownPagesDown;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonBorrow;
         private System.Windows.Forms.DataGridViewTextBoxColumn authorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn currencyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pagesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Borrowed;
+        private System.Windows.Forms.Button buttonRemove;
     }
 }

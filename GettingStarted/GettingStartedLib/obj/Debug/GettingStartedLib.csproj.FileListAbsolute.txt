@@ -18,3 +18,12 @@ C:\Users\Bartek\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingS
 C:\Users\Bartek\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.Migrations.remove2.resources
 C:\Users\Bartek\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.Migrations.add2.resources
 C:\Users\Bartek\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.Migrations.rename3.resources
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.Migrations.borrowing.resources
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.Migrations.datatime.resources
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.Migrations.datatime2.resources
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.Migrations.datatimenull.resources
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.Migrations.archived.resources
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.Migrations.rmarchived.resources
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.Migrations.history.resources
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.Migrations.notifications.resources
+C:\Users\Bartek\source\repos\GettingStarted\GettingStartedLib\obj\Debug\GettingStartedLib.Migrations.subs.resources

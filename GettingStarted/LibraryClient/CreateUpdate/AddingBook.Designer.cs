@@ -33,7 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxAuthor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxCurrency = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxType = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.numericUpDownPrice = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownPrages = new System.Windows.Forms.NumericUpDown();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.comboBoxCurrency = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrages)).BeginInit();
             this.SuspendLayout();
@@ -85,13 +85,6 @@
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Currency";
-            // 
-            // textBoxCurrency
-            // 
-            this.textBoxCurrency.Location = new System.Drawing.Point(224, 25);
-            this.textBoxCurrency.Name = "textBoxCurrency";
-            this.textBoxCurrency.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCurrency.TabIndex = 4;
             // 
             // label4
             // 
@@ -162,11 +155,20 @@
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // comboBoxCurrency
+            // 
+            this.comboBoxCurrency.FormattingEnabled = true;
+            this.comboBoxCurrency.Location = new System.Drawing.Point(227, 26);
+            this.comboBoxCurrency.Name = "comboBoxCurrency";
+            this.comboBoxCurrency.Size = new System.Drawing.Size(97, 21);
+            this.comboBoxCurrency.TabIndex = 15;
+            // 
             // AddingBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 155);
+            this.Controls.Add(this.comboBoxCurrency);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.numericUpDownPrages);
             this.Controls.Add(this.numericUpDownPrice);
@@ -175,7 +177,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxType);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxCurrency);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxAuthor);
             this.Controls.Add(this.label1);
@@ -184,6 +185,7 @@
             this.MaximizeBox = false;
             this.Name = "AddingBook";
             this.Text = "AddingBook";
+            this.Load += new System.EventHandler(this.AddingBook_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrages)).EndInit();
             this.ResumeLayout(false);
@@ -198,7 +200,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxAuthor;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxCurrency;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxType;
         private System.Windows.Forms.Label label5;
@@ -206,5 +207,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownPrice;
         private System.Windows.Forms.NumericUpDown numericUpDownPrages;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.ComboBox comboBoxCurrency;
     }
 }

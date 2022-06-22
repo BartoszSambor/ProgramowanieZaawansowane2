@@ -5,32 +5,9 @@
       <xsd:import namespace="http://Microsoft.ServiceModel.Samples" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/GettingStartedLib" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="ICalculator_Add_InputMessage">
-    <wsdl:part name="parameters" element="tns:Add" />
-  </wsdl:message>
-  <wsdl:message name="ICalculator_Add_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICalculator_Subtract_InputMessage">
-    <wsdl:part name="parameters" element="tns:Subtract" />
-  </wsdl:message>
-  <wsdl:message name="ICalculator_Subtract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SubtractResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICalculator_Multiply_InputMessage">
-    <wsdl:part name="parameters" element="tns:Multiply" />
-  </wsdl:message>
-  <wsdl:message name="ICalculator_Multiply_OutputMessage">
-    <wsdl:part name="parameters" element="tns:MultiplyResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICalculator_Divide_InputMessage">
-    <wsdl:part name="parameters" element="tns:Divide" />
-  </wsdl:message>
-  <wsdl:message name="ICalculator_Divide_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DivideResponse" />
-  </wsdl:message>
   <wsdl:message name="ICalculator_GetBooks_InputMessage">
     <wsdl:part name="parameters" element="tns:GetBooks" />
   </wsdl:message>
@@ -49,23 +26,85 @@
   <wsdl:message name="ICalculator_UpdateBook_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateBookResponse" />
   </wsdl:message>
+  <wsdl:message name="ICalculator_GetBorrowedBooks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowedBooks" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetBorrowedBooks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowedBooksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_BorrowBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:BorrowBook" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_BorrowBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BorrowBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetBorrowedBooksAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowedBooksAll" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetBorrowedBooksAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowedBooksAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_ReturnBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnBook" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_ReturnBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_DeleteBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBook" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_DeleteBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetBorrowedBooksWithTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowedBooksWithTime" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetBorrowedBooksWithTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBorrowedBooksWithTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistory" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetNotifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifications" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetNotifications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetNotificationsAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationsAll" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetNotificationsAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationsAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_ClearNotifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearNotifications" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_ClearNotifications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearNotificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetSubscriptionsAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubscriptionsAll" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetSubscriptionsAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubscriptionsAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetSubscriptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubscriptions" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_GetSubscriptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubscriptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_SubscribeAndClear_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeAndClear" />
+  </wsdl:message>
+  <wsdl:message name="ICalculator_SubscribeAndClear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeAndClearResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICalculator">
-    <wsdl:operation name="Add">
-      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/Add" message="tns:ICalculator_Add_InputMessage" />
-      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/AddResponse" message="tns:ICalculator_Add_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Subtract">
-      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/Subtract" message="tns:ICalculator_Subtract_InputMessage" />
-      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/SubtractResponse" message="tns:ICalculator_Subtract_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Multiply">
-      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/Multiply" message="tns:ICalculator_Multiply_InputMessage" />
-      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/MultiplyResponse" message="tns:ICalculator_Multiply_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Divide">
-      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/Divide" message="tns:ICalculator_Divide_InputMessage" />
-      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/DivideResponse" message="tns:ICalculator_Divide_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetBooks">
       <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetBooks" message="tns:ICalculator_GetBooks_InputMessage" />
       <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetBooksResponse" message="tns:ICalculator_GetBooks_OutputMessage" />
@@ -77,6 +116,58 @@
     <wsdl:operation name="UpdateBook">
       <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/UpdateBook" message="tns:ICalculator_UpdateBook_InputMessage" />
       <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/UpdateBookResponse" message="tns:ICalculator_UpdateBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowedBooks">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooks" message="tns:ICalculator_GetBorrowedBooks_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooksResponse" message="tns:ICalculator_GetBorrowedBooks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrowBook">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/BorrowBook" message="tns:ICalculator_BorrowBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/BorrowBookResponse" message="tns:ICalculator_BorrowBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowedBooksAll">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooksAll" message="tns:ICalculator_GetBorrowedBooksAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooksAllResponse" message="tns:ICalculator_GetBorrowedBooksAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBook">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/ReturnBook" message="tns:ICalculator_ReturnBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/ReturnBookResponse" message="tns:ICalculator_ReturnBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBook">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteBook" message="tns:ICalculator_DeleteBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/DeleteBookResponse" message="tns:ICalculator_DeleteBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBorrowedBooksWithTime">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooksWithTime" message="tns:ICalculator_GetBorrowedBooksWithTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetBorrowedBooksWithTimeResponse" message="tns:ICalculator_GetBorrowedBooksWithTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistory">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetHistory" message="tns:ICalculator_GetHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetHistoryResponse" message="tns:ICalculator_GetHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifications">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetNotifications" message="tns:ICalculator_GetNotifications_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetNotificationsResponse" message="tns:ICalculator_GetNotifications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotificationsAll">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetNotificationsAll" message="tns:ICalculator_GetNotificationsAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetNotificationsAllResponse" message="tns:ICalculator_GetNotificationsAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearNotifications">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/ClearNotifications" message="tns:ICalculator_ClearNotifications_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/ClearNotificationsResponse" message="tns:ICalculator_ClearNotifications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptionsAll">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetSubscriptionsAll" message="tns:ICalculator_GetSubscriptionsAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetSubscriptionsAllResponse" message="tns:ICalculator_GetSubscriptionsAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptions">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetSubscriptions" message="tns:ICalculator_GetSubscriptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/GetSubscriptionsResponse" message="tns:ICalculator_GetSubscriptions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeAndClear">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/SubscribeAndClear" message="tns:ICalculator_SubscribeAndClear_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICalculator/SubscribeAndClearResponse" message="tns:ICalculator_SubscribeAndClear_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

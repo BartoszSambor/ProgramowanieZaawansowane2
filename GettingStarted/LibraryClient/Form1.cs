@@ -1,8 +1,10 @@
 ﻿using LibraryClient.ServiceReference1;
+using LibraryClient.ServiceReference2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,8 +16,9 @@ namespace LibraryClient
 {
     public partial class Form1 : Form
     {
-
+        
         CalculatorClient client = new CalculatorClient();
+        UserServerClient clinetUsers = new UserServerClient();
         public Form1()
         {
             InitializeComponent();
@@ -39,6 +42,7 @@ namespace LibraryClient
 
             //dataGridView1.Rows
             bookBindingSource.DataSource = client.GetBooks();
+            var tmp = clinetUsers.GetLibrarians();
 
 /*            comboBox1.Items.Clear();
             comboBox1.Items.Add("ala ma kota");
@@ -123,7 +127,7 @@ namespace LibraryClient
 
         private void button5_Click(object sender, EventArgs e)
         {
-            new BookBrowsing(true).Show();
+            new BookBrowsing("test user", true).Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -133,7 +137,120 @@ namespace LibraryClient
 
         private void button7_Click(object sender, EventArgs e)
         {
-            new BookBrowsing(false).Show();
+            new BookBrowsing("test user", false, true).Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            new LibraryClient.Login.Registration(false).Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            var users = clinetUsers.GetUsers();
+            textBox2.Text = String.Empty;
+            foreach (var user in users)
+            {
+                textBox2.AppendText(user.Login + " " + user.Password + Environment.NewLine);
+            }
+            var librarians = clinetUsers.GetLibrarians();
+            foreach (var librarian in librarians)
+            {
+                textBox2.AppendText(librarian.Login + " " + librarian.Password + Environment.NewLine);
+            }
+            var admins = clinetUsers.GetAdmins();
+            foreach (var admin in admins)
+            {
+                textBox2.AppendText(admin.Login + " " + admin.Password + Environment.NewLine);
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            new Login.Login().Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            var borrowed = client.GetBorrowedBooksAll();
+            textBox3.Text = String.Empty;
+            Debug.WriteLine("Bowwored all count: " + borrowed.Count());
+            foreach (var book in borrowed)
+            {
+                textBox3.AppendText(book.Book.Title + " " + book.Book.Author + " " + book.User + Environment.NewLine);
+            }
+        }
+        
+        private void button12_Click(object sender, EventArgs e)
+        {
+            new Browsing.MyBooks(textBox4.Text).Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            //dataGridView2.DataSource = client.GetBorrowedBooksWithTime(textBox4.Text);
+        }
+
+        private void button13_Click_1(object sender, EventArgs e)
+        {
+            new Login.Login().Show();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            new Browsing.History(textBox4.Text).Show();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            new Browsing.HistoryAdmin().Show();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            clinetUsers.CreateUser("admin", "admin", "Admin");
+        }
+
+        private void button16_Click_1(object sender, EventArgs e)
+        {
+            Logic.ExchangeOperations.LoadRates();
+            var c = Logic.ExchangeOperations.GetNames();
+            for(int i = 0; i < c.Length; i++)
+            {
+                textBox5.AppendText(c[i] + " " + Logic.ExchangeOperations.ExchangeRateToEuro[c[i]] + Environment.NewLine);
+            }
+
+           
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            textBox6.Text = "";
+            var notfs = client.GetNotificationsAll();
+            for (int i = 0; i < notfs.Length; i++)
+            {
+                textBox6.AppendText(notfs[i].User + " " + notfs[i].Time + " " + notfs[i].Book.Title + Environment.NewLine);
+            }
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            textBox7.Text = "";
+            var notfs = client.GetSubscriptionsAll();
+            for (int i = 0; i < notfs.Length; i++)
+            {
+                textBox7.AppendText(notfs[i].User + " " + notfs[i].Type + Environment.NewLine);
+            }
         }
     }
 }

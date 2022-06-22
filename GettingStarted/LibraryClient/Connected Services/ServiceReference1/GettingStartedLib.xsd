@@ -9,6 +9,7 @@
   <xs:complexType name="Book">
     <xs:sequence>
       <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Borrowed" type="xs:boolean" />
       <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Pages" type="xs:int" />
@@ -18,4 +19,68 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Book" nillable="true" type="tns:Book" />
+  <xs:complexType name="ArrayOfBorrowedElem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BorrowedElem" nillable="true" type="tns:BorrowedElem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBorrowedElem" nillable="true" type="tns:ArrayOfBorrowedElem" />
+  <xs:complexType name="BorrowedElem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Book" nillable="true" type="tns:Book" />
+      <xs:element minOccurs="0" name="BookId" type="xs:int" />
+      <xs:element minOccurs="0" name="BorrowTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ReturnDeadline" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BorrowedElem" nillable="true" type="tns:BorrowedElem" />
+  <xs:complexType name="ArrayOfBorrowedHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BorrowedHistory" nillable="true" type="tns:BorrowedHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBorrowedHistory" nillable="true" type="tns:ArrayOfBorrowedHistory" />
+  <xs:complexType name="BorrowedHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Book" nillable="true" type="tns:Book" />
+      <xs:element minOccurs="0" name="BookId" type="xs:int" />
+      <xs:element minOccurs="0" name="BorrowTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ReturnDeadline" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BorrowedHistory" nillable="true" type="tns:BorrowedHistory" />
+  <xs:complexType name="ArrayOfNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Notification" nillable="true" type="tns:Notification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNotification" nillable="true" type="tns:ArrayOfNotification" />
+  <xs:complexType name="Notification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Book" nillable="true" type="tns:Book" />
+      <xs:element minOccurs="0" name="BookId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Time" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Notification" nillable="true" type="tns:Notification" />
+  <xs:complexType name="ArrayOfSubscription">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Subscription" nillable="true" type="tns:Subscription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubscription" nillable="true" type="tns:ArrayOfSubscription" />
+  <xs:complexType name="Subscription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Subscription" nillable="true" type="tns:Subscription" />
 </xs:schema>

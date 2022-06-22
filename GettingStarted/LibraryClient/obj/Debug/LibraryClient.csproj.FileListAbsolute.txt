@@ -12,3 +12,13 @@ C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClien
 C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.BookBrowsing.resources
 C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.CreateUpdate.AddingBook.resources
 C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.CreateUpdate.UpdateBooks.resources
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.Login.Registration.resources
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.Login.Login.resources
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.Browsing.MyBooks.resources
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.Browsing.History.resources
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.Browsing.HistoryAdmin.resources
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.FirstPage.MenuLibrarian.resources
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.FirstPage.MenuUser.resources
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.Browsing.LibrariansView.resources
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.FirstPage.MenuAdmin.resources
+C:\Users\Bartek\source\repos\GettingStarted\LibraryClient\obj\Debug\LibraryClient.Browsing.Subscritpions.resources
